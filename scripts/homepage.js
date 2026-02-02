@@ -53,16 +53,16 @@ const heroSlides = [
 ];
 
 const categories = [
-    { name: 'T-Shirts', icon: '👕', count: 150, link: '#tshirts' },
-    { name: 'Hoodies', icon: '🧥', count: 80, link: '#hoodies' },
-    { name: 'Mugs & Cups', icon: '☕', count: 120, link: '#cups' },
-    { name: 'Phone Cases', icon: '📱', count: 200, link: '#cases' },
-    { name: 'Photo Frames', icon: '🖼️', count: 90, link: '#frames' },
-    { name: 'Key Chains', icon: '🔑', count: 65, link: '#keychains' },
-    { name: 'Face Masks', icon: '😷', count: 45, link: '#masks' },
-    { name: 'Tote Bags', icon: '👜', count: 75, link: '#bags' },
-    { name: 'Pendants', icon: '💎', count: 55, link: '#pendants' },
-    { name: 'Slippers', icon: '🩴', count: 40, link: '#slippers' }
+    { name: 'T-Shirts', icon: '👕', count: 150, link: 'productCategory.html?category=tshirts' },
+    { name: 'Hoodies', icon: '🧥', count: 80, link: 'productCategory.html?category=hoodies' },
+    { name: 'Mugs & Cups', icon: '☕', count: 120, link: 'productCategory.html?category=cups' },
+    { name: 'Phone Cases', icon: '📱', count: 200, link: 'productCategory.html?category=2DMobileCover' },
+    { name: 'Photo Frames', icon: '🖼️', count: 90, link: 'productCategory.html?category=woodenFrame' },
+    { name: 'Key Chains', icon: '🔑', count: 65, link: 'productCategory.html?category=keyChain' },
+    { name: 'Face Masks', icon: '😷', count: 45, link: 'productCategory.html?category=facemask' },
+    { name: 'Tote Bags', icon: '👜', count: 75, link: 'productCategory.html?category=toteBags' },
+    { name: 'Pendants', icon: '💎', count: 55, link: 'productCategory.html?category=pendant' },
+    { name: 'Slippers', icon: '🩴', count: 40, link: 'productCategory.html?category=slipperPrint' }
 ];
 
 const featuredProducts = [
