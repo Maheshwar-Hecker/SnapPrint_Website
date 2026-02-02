@@ -175,9 +175,14 @@ function enableDragScroll(container) {
     });
 }
 
-// Add special card styles
-const style = document.createElement('style');
-style.textContent = `
+// Add special card styles (wrap in IIFE to avoid global scope pollution)
+(function() {
+    // Check if styles already added
+    if (document.getElementById('special-card-styles')) return;
+    
+    const specialCardStyle = document.createElement('style');
+    specialCardStyle.id = 'special-card-styles';
+    specialCardStyle.textContent = `
     .special-card {
         min-width: 320px;
         height: 100%;
@@ -378,7 +383,8 @@ style.textContent = `
         }
     }
 `;
-document.head.appendChild(style);
+    document.head.appendChild(specialCardStyle);
+})();
 
 // Export functions
 if (typeof module !== 'undefined' && module.exports) {
