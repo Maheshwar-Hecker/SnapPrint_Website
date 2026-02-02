@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SnapPrint - Premium Custom Printing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/homepage.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Navigation Header -->
+        <header class="header">
+            <div class="header-top">
+                <!-- Mobile Menu Toggle -->
+                <button class="hamburger-menu" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="logo">
+                    <h1>SnapPrint</h1>
+                    <span class="tagline">Custom Printing Studio</span>
+                </div>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products, categories...">
+                    <button class="search-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="header-actions">
+                    <button class="header-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                        <span>Wishlist</span>
+                    </button>
+                    <button class="header-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                        <span>Cart</span>
+                    </button>
+                    <button class="header-btn login-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <span>Login</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Hero Slider Section -->
+        <section class="hero-section">
+            <div id="hero-slider" class="hero-slider"></div>
+        </section>
+
+        <!-- Category Grid -->
+        <section class="category-section">
+            <div class="section-header">
+                <h2>Explore Our Custom Printing</h2>
+            </div>
+            <div id="category-grid" class="category-grid"></div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="products-section">
+            <div class="section-header">
+                <h2>Today's Best Deals For You!</h2>
+                <a href="#" class="view-all">View All
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <div id="featured-products" class="product-grid"></div>
+        </section>
+
+        <!-- Special Offers Carousel -->
+        <section class="special-offers-section">
+            <div class="section-header">
+                <h2>Special Offers Just For You</h2>
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev" data-carousel="special-offers">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
+                    <button class="carousel-btn next" data-carousel="special-offers">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="special-offers" class="special-carousel"></div>
+        </section>
+
+        <!-- Trending Products -->
+        <section class="products-section">
+            <div class="section-header">
+                <h2>Trending Custom Prints</h2>
+                <a href="#" class="view-all">View All
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <div id="trending-products" class="product-grid"></div>
+        </section>
+
+        <!-- New Arrivals -->
+        <section class="products-section">
+            <div class="section-header">
+                <h2>New Arrivals</h2>
+                <a href="#" class="view-all">View All
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <div id="new-arrivals" class="product-grid"></div>
+        </section>
+
+        <!-- Banner Section -->
+        <section class="banner-section">
+            <div class="promo-banner">
+                <div class="banner-content">
+                    <h2>Premium Quality Printing</h2>
+                    <p>Get 50% OFF on your first order of custom prints</p>
+                    <button class="cta-btn">Shop Now</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Best Sellers -->
+        <section class="products-section">
+            <div class="section-header">
+                <h2>Best Sellers</h2>
+                <a href="#" class="view-all">View All
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <div id="best-sellers" class="product-grid"></div>
+        </section>
+
+        <!-- Most Loved Section -->
+        <section class="products-section">
+            <div class="section-header">
+                <h2>Most Loved Products</h2>
+                <a href="#" class="view-all">View All
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <div id="most-loved" class="product-grid"></div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About SnapPrint</h3>
+                    <p>Premium custom printing services for all your personalization needs.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Track Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="#">T-Shirts</a></li>
+                        <li><a href="#">Mugs & Cups</a></li>
+                        <li><a href="#">Phone Cases</a></li>
+                        <li><a href="#">Photo Frames</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SnapPrint. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="widgets/slidshowImage.js"></script>
+    <script src="widgets/category_unit.js"></script>
+    <script src="widgets/productCard.js"></script>
+    <script src="widgets/specialProductCards.js"></script>
+    <script src="scripts/homepage.js"></script>
+</body>
+</html>

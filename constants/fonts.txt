@@ -1,0 +1,45 @@
+FONTS USED / RECOMMENDED (Flipkart-style)
+
+PRIMARY UI FONT
+- Inter (Highly recommended)
+  - Weights used: 400, 500, 600, 700
+  - Clean, modern, highly readable
+  - Excellent for ecommerce grids
+
+ALTERNATIVE OPTIONS
+- Roboto
+  - Similar to Flipkart legacy UI
+  - Slightly more mechanical
+
+- SF Pro Display (Apple-like premium feel)
+  - Best for headings
+  - Use with Inter for body
+
+FONT USAGE GUIDE
+- H1 / Hero titles:
+  - Inter 700 / SF Pro Display 700
+  - Tight letter-spacing (-1%)
+
+- Section headings:
+  - Inter 600
+
+- Product titles:
+  - Inter 500
+
+- Prices:
+  - Inter 700 (slightly larger size)
+
+- Descriptions / Meta:
+  - Inter 400 with reduced opacity
+
+TYPOGRAPHY RULES
+- No decorative fonts
+- No italics for UI
+- Use weight & spacing for hierarchy
+- Line-height: 1.4–1.6
+
+OVERALL FONT VIBE
+- Neutral
+- Trustworthy
+- Scalable
+- Non-distracting

@@ -1,0 +1,49 @@
+THEME: Minimal Black & White Ecommerce UI (Flipkart-inspired)
+
+PRIMARY COLORS
+- Pure White: #FFFFFF (Base background)
+- Pure Black: #000000 (Primary text, borders, icons)
+
+GRAY SCALE (Opacity-driven, no harsh colors)
+- Gray 900: #111111 (Headings, strong text)
+- Gray 800: #1A1A1A (Card titles)
+- Gray 700: #2A2A2A (Secondary text)
+- Gray 600: #3A3A3A (Muted labels)
+- Gray 500: #5A5A5A (Descriptions)
+- Gray 400: #8A8A8A (Disabled text)
+- Gray 300: #CFCFCF (Borders, dividers)
+- Gray 200: #E6E6E6 (Card outlines)
+- Gray 100: #F4F4F4 (Section background)
+- Gray 050: #FAFAFA (Soft background tint)
+
+OPACITY USAGE (IMPORTANT)
+- Primary text: rgba(0,0,0,0.95)
+- Secondary text: rgba(0,0,0,0.72)
+- Meta text: rgba(0,0,0,0.55)
+- Disabled text: rgba(0,0,0,0.35)
+- Borders: rgba(0,0,0,0.12)
+- Card shadow: rgba(0,0,0,0.08)
+
+COMPONENT STYLING
+- Cards: White background, 1px subtle border, no heavy shadows
+- Hover: Border darkens slightly + 2–4% scale or lift
+- Buttons:
+  - Primary: Black bg, White text
+  - Secondary: White bg, Black border, Black text
+- Badges: Gray 100 bg, Gray 800 text
+
+LAYOUT & FEEL
+- Flat design (no gradients)
+- Rounded corners: 12–16px
+- Generous spacing (Flipkart-like airy grid)
+- Strong visual hierarchy using font weight, not color
+
+ICON & IMAGE TREATMENT
+- Icons: Monochrome (black/gray)
+- Product images: Floating on white, soft shadow only
+
+MOOD
+- Editorial
+- Premium
+- Calm
+- Trust-focused
