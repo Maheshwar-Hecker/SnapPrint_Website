@@ -46,6 +46,94 @@
         "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=400&h=400&fit=crop",
         "productCount": 24
       }
+    ],
+    "colorCategories": [
+      {
+        "id": "white",
+        "name": "White T-Shirts",
+        "description": "Pure white tees - Perfect canvas for any design",
+        "image": "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400&h=400&fit=crop",
+        "productCount": 52,
+        "color": "#FFFFFF"
+      },
+      {
+        "id": "black",
+        "name": "Black T-Shirts",
+        "description": "Classic black tees for bold prints",
+        "image": "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=400&h=400&fit=crop",
+        "productCount": 48,
+        "color": "#000000"
+      },
+      {
+        "id": "navy",
+        "name": "Navy Blue T-Shirts",
+        "description": "Deep navy for professional looks",
+        "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop",
+        "productCount": 35,
+        "color": "#001f3f"
+      },
+      {
+        "id": "grey",
+        "name": "Grey T-Shirts",
+        "description": "Versatile grey tones for any occasion",
+        "image": "https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=400&h=400&fit=crop",
+        "productCount": 42,
+        "color": "#808080"
+      },
+      {
+        "id": "red",
+        "name": "Red T-Shirts",
+        "description": "Vibrant red for eye-catching designs",
+        "image": "https://images.unsplash.com/photo-1562157873-818bc0726f68?w=400&h=400&fit=crop",
+        "productCount": 28,
+        "color": "#DC143C"
+      },
+      {
+        "id": "green",
+        "name": "Green T-Shirts",
+        "description": "Fresh green shades for nature-inspired prints",
+        "image": "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400&h=400&fit=crop",
+        "productCount": 24,
+        "color": "#228B22"
+      }
+    ],
+    "gsmCategories": [
+      {
+        "id": "gsm-180",
+        "name": "180 GSM T-Shirts",
+        "description": "Lightweight & breathable - Perfect for summer",
+        "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop",
+        "productCount": 38,
+        "gsm": "180",
+        "weight": "Light"
+      },
+      {
+        "id": "gsm-220",
+        "name": "220 GSM T-Shirts",
+        "description": "Medium weight - All-season comfort",
+        "image": "https://images.unsplash.com/photo-1562157873-818bc0726f68?w=400&h=400&fit=crop",
+        "productCount": 56,
+        "gsm": "220",
+        "weight": "Medium"
+      },
+      {
+        "id": "gsm-260",
+        "name": "260 GSM T-Shirts",
+        "description": "Premium heavyweight - Superior quality",
+        "image": "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400&h=400&fit=crop",
+        "productCount": 42,
+        "gsm": "260",
+        "weight": "Heavy"
+      },
+      {
+        "id": "gsm-300",
+        "name": "300 GSM T-Shirts",
+        "description": "Ultra-premium - Maximum durability",
+        "image": "https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=400&h=400&fit=crop",
+        "productCount": 28,
+        "gsm": "300",
+        "weight": "Ultra Heavy"
+      }
     ]
   },
   "hoodies": {

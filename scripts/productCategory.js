@@ -248,6 +248,31 @@ function renderSubcategories() {
     // Render Collections
     const collectionsGrid = document.getElementById('collections-grid');
     collectionsGrid.innerHTML = collections.map(sub => createSubcategoryCard(sub)).join('');
+    
+    // Render Color Categories (T-Shirts only)
+    if (categoryData.colorCategories && categoryData.colorCategories.length > 0) {
+        const colorSection = document.getElementById('color-categories-section');
+        const colorGrid = document.getElementById('color-categories-grid');
+        colorSection.style.display = 'block';
+        colorGrid.innerHTML = categoryData.colorCategories.map(color => createColorCard(color)).join('');
+    }
+    
+    // Render GSM Categories (T-Shirts only)
+    if (categoryData.gsmCategories && categoryData.gsmCategories.length > 0) {
+        const gsmSection = document.getElementById('gsm-categories-section');
+        const gsmGrid = document.getElementById('gsm-categories-grid');
+        gsmSection.style.display = 'block';
+        gsmGrid.innerHTML = categoryData.gsmCategories.map(gsm => createGSMCard(gsm)).join('');
+    }
+    
+    // Update hero stats
+    const totalProducts = (categoryData.subcategories?.length || 0) + 
+                         (categoryData.colorCategories?.length || 0) + 
+                         (categoryData.gsmCategories?.length || 0);
+    const totalSubcategories = categoryData.subcategories?.length || 0;
+    
+    document.getElementById('total-products').textContent = `${totalProducts * 15}+`;
+    document.getElementById('subcategory-count').textContent = totalSubcategories;
 }
 
 /**
@@ -273,7 +298,80 @@ function createSubcategoryCard(subcategory) {
                 </div>
                 <button class="view-subcategory-btn">
                     View Collection
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    `;
+}
+
+/**
+ * Create color category card HTML
+ */
+function createColorCard(color) {
+    return `
+        <div class="subcategory-card color-card" onclick="navigateToSubcategory('${color.id}')" data-color="${color.color}">
+            <div class="subcategory-card-image">
+                <img src="${color.image}" alt="${color.name}" loading="lazy">
+                <div class="color-overlay" style="background: ${color.color}; opacity: 0.3;"></div>
+            </div>
+            <div class="subcategory-card-content">
+                <div class="color-swatch" style="background: ${color.color};"></div>
+                <h3 class="subcategory-name">${color.name}</h3>
+                <p class="subcategory-description">${color.description}</p>
+                <div class="subcategory-count">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"/>
+                        <rect x="14" y="3" width="7" height="7"/>
+                        <rect x="14" y="14" width="7" height="7"/>
+                        <rect x="3" y="14" width="7" height="7"/>
+                    </svg>
+                    ${color.productCount} Products
+                </div>
+                <button class="view-subcategory-btn">
+                    Shop ${color.name.split(' ')[0]}
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    `;
+}
+
+/**
+ * Create GSM category card HTML
+ */
+function createGSMCard(gsm) {
+    return `
+        <div class="subcategory-card gsm-card" onclick="navigateToSubcategory('${gsm.id}')">
+            <div class="subcategory-card-image">
+                <img src="${gsm.image}" alt="${gsm.name}" loading="lazy">
+                <div class="gsm-badge">${gsm.gsm} GSM</div>
+            </div>
+            <div class="subcategory-card-content">
+                <div class="gsm-label">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                    </svg>
+                    <span>${gsm.weight}</span>
+                </div>
+                <h3 class="subcategory-name">${gsm.name}</h3>
+                <p class="subcategory-description">${gsm.description}</p>
+                <div class="subcategory-count">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="7" height="7"/>
+                        <rect x="14" y="3" width="7" height="7"/>
+                        <rect x="14" y="14" width="7" height="7"/>
+                        <rect x="3" y="14" width="7" height="7"/>
+                    </svg>
+                    ${gsm.productCount} Products
+                </div>
+                <button class="view-subcategory-btn">
+                    View ${gsm.gsm} GSM
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
                 </button>
