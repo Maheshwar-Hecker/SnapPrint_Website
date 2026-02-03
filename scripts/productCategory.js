@@ -9,6 +9,23 @@ const currentCategory = urlParams.get('category') || 'tshirts';
 
 let categoryData = null;
 
+// Hero background image slider
+let currentSlide = 0;
+const heroSlides = document.querySelectorAll('.hero-slide');
+
+function rotateHeroBackground() {
+    if (heroSlides.length === 0) return;
+    
+    heroSlides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide + 1) % heroSlides.length;
+    heroSlides[currentSlide].classList.add('active');
+}
+
+// Change hero background every 5 seconds
+if (heroSlides.length > 0) {
+    setInterval(rotateHeroBackground, 5000);
+}
+
 // Sample product data for demonstration
 const generateCategoryProducts = (categoryName, count = 6) => {
     const products = [];
@@ -118,6 +135,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Render page sections
     if (categoryData) {
         updatePageHeader();
+        loadHeroImages();
         renderSubcategories();
         renderRelatedProducts();
         renderPreviouslyViewed();
@@ -126,6 +144,61 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     console.log('✅ Product Category Page Ready!');
 });
+
+/**
+ * Load hero background images based on category
+ */
+function loadHeroImages() {
+    const categoryImages = {
+        tshirts: [
+            'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=1200&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1562157873-818bc0726f68?w=1200&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=1200&h=600&fit=crop'
+        ],
+        hoodies: [
+            'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=1200&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=1200&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1578932750294-f5075e85f44a?w=1200&h=600&fit=crop'
+        ],
+        cups: [
+            'https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=1200&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1609505833958-16f65ffb5ad1?w=1200&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1534353436294-0dbd4bdac845?w=1200&h=600&fit=crop'
+        ],
+        '2DMobileCover': [
+            'https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?w=1200&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1617296538902-887900d9b592?w=1200&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1585060544812-6b45742d762f?w=1200&h=600&fit=crop'
+        ],
+        woodenFrame: [
+            'https://images.unsplash.com/photo-1513519245088-0e12902e35ca?w=1200&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1582139329536-e7284fece509?w=1200&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1594843267926-de1f6b5c7e29?w=1200&h=600&fit=crop'
+        ],
+        default: [
+            'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=1200&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1622445275463-afa2ab738c34?w=1200&h=600&fit=crop',
+            'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=1200&h=600&fit=crop'
+        ]
+    };
+    
+    const images = categoryImages[currentCategory] || categoryImages.default;
+    const slides = document.querySelectorAll('.hero-slide');
+    
+    slides.forEach((slide, index) => {
+        if (images[index]) {
+            slide.style.backgroundImage = `linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(45,45,45,0.6) 100%), url('${images[index]}')`;
+        }
+    });
+    
+    // Load floating images
+    const floatingImgs = document.querySelectorAll('.floating-img');
+    floatingImgs.forEach((img, index) => {
+        if (images[index % images.length]) {
+            img.style.backgroundImage = `url('${images[index % images.length]}')`;
+        }
+    });
+}
 
 /**
  * Load category data from JSON
