@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - SnapPrint</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/homepage.css">
+    <link rel="stylesheet" href="styles/productDetails.css">
+</head>
+<body>
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Navigation Header -->
+        <header class="header">
+            <div class="header-top">
+                <!-- Mobile Menu Toggle -->
+                <button class="hamburger-menu" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="logo">
+                    <a href="index.html" style="text-decoration: none; color: inherit;">
+                        <h1>SnapPrint</h1>
+                        <span class="tagline">Custom Printing Studio</span>
+                    </a>
+                </div>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products, categories...">
+                    <button class="search-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"/>
+                            <path d="m21 21-4.35-4.35"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="header-actions">
+                    <button class="header-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                        <span>Wishlist</span>
+                    </button>
+                    <button class="header-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                        <span>Cart</span>
+                    </button>
+                    <button class="header-btn login-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                            <circle cx="12" cy="7" r="4"/>
+                        </svg>
+                        <span>Login</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span class="separator">/</span>
+            <a href="productCategory.html?category=tshirts" id="breadcrumb-category">T-Shirts</a>
+            <span class="separator">/</span>
+            <span id="breadcrumb-product">Custom Print Round Neck T-Shirt</span>
+        </nav>
+
+        <!-- Product Details Section -->
+        <div class="product-details-container">
+            <!-- Left: Image Gallery -->
+            <div class="product-gallery">
+                <div class="main-image-container">
+                    <span class="product-badge" id="product-badge">NEW</span>
+                    <button class="wishlist-btn" aria-label="Add to wishlist">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                        </svg>
+                    </button>
+                    <img id="main-product-image" src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=600&h=600&fit=crop" alt="Product">
+                </div>
+                <div class="thumbnail-gallery" id="thumbnail-gallery">
+                    <!-- Thumbnails will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Right: Product Info -->
+            <div class="product-info">
+                <div class="product-category" id="product-category">Men Fashion</div>
+                <h1 class="product-title" id="product-title">Custom Print Round Neck T-Shirt</h1>
+                
+                <!-- Rating -->
+                <div class="product-rating">
+                    <div class="rating-stars">
+                        <span class="rating-value" id="rating-value">4.5</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="#FFA500" stroke="none">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <div class="rating-reviews">
+                        <span id="review-count">1,234</span> ratings
+                    </div>
+                </div>
+
+                <!-- Pricing -->
+                <div class="product-pricing">
+                    <div class="discount-badge" id="discount-badge">-35%</div>
+                    <div class="current-price" id="current-price">₹499</div>
+                    <div class="original-price" id="original-price">₹799</div>
+                </div>
+
+                <!-- EMI Options -->
+                <div class="emi-offer">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2">
+                        <rect x="2" y="5" width="20" height="14" rx="2"/>
+                        <path d="M2 10h20"/>
+                    </svg>
+                    <span>EMI from <strong>₹167/month</strong> • No Cost EMI available</span>
+                </div>
+
+                <!-- Size Selection -->
+                <div class="size-selection">
+                    <label class="selection-label">Select Size</label>
+                    <div class="size-options" id="size-options">
+                        <button class="size-btn" data-size="S">S</button>
+                        <button class="size-btn active" data-size="M">M</button>
+                        <button class="size-btn" data-size="L">L</button>
+                        <button class="size-btn" data-size="XL">XL</button>
+                        <button class="size-btn" data-size="XXL">XXL</button>
+                    </div>
+                </div>
+
+                <!-- Color Selection -->
+                <div class="color-selection">
+                    <label class="selection-label">Select Color</label>
+                    <div class="color-options" id="color-options">
+                        <button class="color-btn active" style="background: #000000;" data-color="Black"></button>
+                        <button class="color-btn" style="background: #FFFFFF; border: 1px solid #ddd;" data-color="White"></button>
+                        <button class="color-btn" style="background: #808080;" data-color="Grey"></button>
+                        <button class="color-btn" style="background: #001f3f;" data-color="Navy"></button>
+                        <button class="color-btn" style="background: #DC143C;" data-color="Red"></button>
+                    </div>
+                </div>
+
+                <!-- Quantity Selection -->
+                <div class="quantity-selection">
+                    <label class="selection-label">Quantity</label>
+                    <div class="quantity-controls">
+                        <button class="qty-btn" id="qty-decrease">-</button>
+                        <input type="number" class="qty-input" id="qty-input" value="1" min="1" max="10">
+                        <button class="qty-btn" id="qty-increase">+</button>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="product-actions">
+                    <button class="btn-add-to-cart" id="add-to-cart-btn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"/>
+                            <circle cx="20" cy="21" r="1"/>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+                        </svg>
+                        Add to Cart
+                    </button>
+                    <button class="btn-buy-now" id="buy-now-btn">Buy Now</button>
+                </div>
+
+                <!-- Delivery Info -->
+                <div class="delivery-info">
+                    <h3>Delivery Details</h3>
+                    <div class="delivery-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        <div>
+                            <input type="text" class="pincode-input" placeholder="Enter PIN code" value="208024">
+                            <button class="check-btn">Check</button>
+                        </div>
+                    </div>
+                    <div class="delivery-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="1" y="3" width="15" height="13"/>
+                            <path d="M16 8h5l3 3v5h-2m-4 0H2"/>
+                        </svg>
+                        <span><strong>Express Delivery</strong> by Tomorrow</span>
+                    </div>
+                    <div class="delivery-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                        <span><strong>7-Day Return</strong> • Cash on Delivery Available</span>
+                    </div>
+                </div>
+
+                <!-- Product Highlights -->
+                <div class="product-highlights">
+                    <h3>Product Highlights</h3>
+                    <ul id="product-highlights-list">
+                        <li>Premium 220 GSM fabric - Soft & comfortable</li>
+                        <li>100% cotton - Breathable for all-day wear</li>
+                        <li>Custom print quality - Vibrant & long-lasting colors</li>
+                        <li>Pre-shrunk fabric - Maintains size after wash</li>
+                        <li>Available in 5+ colors and all sizes</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs Section -->
+        <div class="product-tabs">
+            <div class="tab-headers">
+                <button class="tab-header active" data-tab="description">Description</button>
+                <button class="tab-header" data-tab="specifications">Specifications</button>
+                <button class="tab-header" data-tab="reviews">Reviews (<span id="review-count-tab">1234</span>)</button>
+            </div>
+
+            <div class="tab-content active" id="description-tab">
+                <h3>Product Description</h3>
+                <p id="product-description">
+                    Experience premium comfort with our custom printed t-shirts. Made from 100% pure cotton with 220 GSM fabric weight, 
+                    these tees are perfect for everyday wear. Our advanced printing technology ensures vibrant, long-lasting prints 
+                    that won't fade or crack even after multiple washes. The fabric is pre-shrunk to maintain its size and shape. 
+                    Whether you're looking for casual wear or custom merchandise for your brand, our t-shirts deliver quality and style.
+                </p>
+            </div>
+
+            <div class="tab-content" id="specifications-tab">
+                <h3>Specifications</h3>
+                <table class="specs-table">
+                    <tr>
+                        <td>Material</td>
+                        <td>100% Cotton</td>
+                    </tr>
+                    <tr>
+                        <td>Fabric Weight</td>
+                        <td>220 GSM</td>
+                    </tr>
+                    <tr>
+                        <td>Fit</td>
+                        <td>Regular Fit</td>
+                    </tr>
+                    <tr>
+                        <td>Neck Type</td>
+                        <td>Round Neck</td>
+                    </tr>
+                    <tr>
+                        <td>Sleeve Type</td>
+                        <td>Half Sleeve</td>
+                    </tr>
+                    <tr>
+                        <td>Print Type</td>
+                        <td>Digital Print / Screen Print</td>
+                    </tr>
+                    <tr>
+                        <td>Care Instructions</td>
+                        <td>Machine wash cold, tumble dry low</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="tab-content" id="reviews-tab">
+                <div class="reviews-summary">
+                    <div class="rating-overview">
+                        <div class="rating-big">4.5</div>
+                        <div class="rating-stars-large">
+                            ★★★★★
+                        </div>
+                        <div class="rating-text">Based on 1,234 reviews</div>
+                    </div>
+                    <div class="rating-breakdown">
+                        <div class="rating-bar">
+                            <span>5★</span>
+                            <div class="bar"><div class="fill" style="width: 70%"></div></div>
+                            <span>864</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span>4★</span>
+                            <div class="bar"><div class="fill" style="width: 20%"></div></div>
+                            <span>247</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span>3★</span>
+                            <div class="bar"><div class="fill" style="width: 7%"></div></div>
+                            <span>86</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span>2★</span>
+                            <div class="bar"><div class="fill" style="width: 2%"></div></div>
+                            <span>25</span>
+                        </div>
+                        <div class="rating-bar">
+                            <span>1★</span>
+                            <div class="bar"><div class="fill" style="width: 1%"></div></div>
+                            <span>12</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="reviews-list" id="reviews-list">
+                    <!-- Reviews will be inserted here by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Viral Products Section -->
+        <section class="products-section viral-section">
+            <div class="section-header">
+                <h2>🔥 Viral Products</h2>
+                <p class="section-subtitle">Trending now - What everyone's buying</p>
+            </div>
+            <div id="viral-products" class="product-grid product-grid-large"></div>
+        </section>
+
+        <!-- Most Viewed Section -->
+        <section class="products-section">
+            <div class="section-header">
+                <h2>👁️ Most Viewed Products</h2>
+                <a href="#" class="view-all">View All
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <div id="most-viewed-products" class="product-grid product-grid-large"></div>
+        </section>
+
+        <!-- Mixed Category Section -->
+        <section class="products-section mixed-category-section">
+            <div class="section-header">
+                <h2>🎨 Explore More Categories</h2>
+                <p class="section-subtitle">Discover products from different collections</p>
+            </div>
+            <div id="mixed-category-products" class="product-grid product-grid-large"></div>
+        </section>
+
+        <!-- You Might Also Like Section -->
+        <section class="products-section">
+            <div class="section-header">
+                <h2>💡 You Might Also Like</h2>
+                <a href="#" class="view-all">View All
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <div id="related-products" class="product-grid product-grid-large"></div>
+        </section>
+
+        <!-- Previously Viewed Section -->
+        <section class="products-section">
+            <div class="section-header">
+                <h2>👀 Previously Viewed</h2>
+                <a href="#" class="view-all">View All
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+            <div id="previously-viewed" class="product-grid"></div>
+        </section>
+
+        <!-- Mixed Categories Section -->
+        <section class="products-section mixed-categories-final">
+            <div class="section-header">
+                <h2>🎯 Shop From Different Categories</h2>
+                <p class="section-subtitle">Mix and match from our diverse collection</p>
+            </div>
+            <div id="mixed-categories-final" class="product-grid product-grid-large"></div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About SnapPrint</h3>
+                    <p>Premium custom printing services for all your personalization needs.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Track Order</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Categories</h3>
+                    <ul>
+                        <li><a href="productCategory.html?category=tshirts">T-Shirts</a></li>
+                        <li><a href="productCategory.html?category=cups">Mugs & Cups</a></li>
+                        <li><a href="productCategory.html?category=2DMobileCover">Phone Cases</a></li>
+                        <li><a href="productCategory.html?category=woodenFrame">Photo Frames</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Customer Service</h3>
+                    <ul>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SnapPrint. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="widgets/productCard.js"></script>
+    <script src="scripts/productDetails.js"></script>
+</body>
+</html>

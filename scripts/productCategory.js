@@ -38,22 +38,22 @@ const generateCategoryProducts = (categoryName, count = 6) => {
         'https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=400&h=400&fit=crop'
     ];
     
-    const badges = ['NEW', 'HOT', 'SALE', 'POPULAR', 'BESTSELLER'];
-    const cardColors = ['#FFE5E5', '#E5E5FF', '#E5FFE5', '#FFFFE5', '#FFE5F0', '#F0E5FF'];
-    
     for (let i = 0; i < count; i++) {
+        const price = Math.floor(Math.random() * 500) + 299;
+        const originalPrice = Math.floor(price * 1.5) + 100;
+        const discount = Math.round(((originalPrice - price) / originalPrice) * 100);
+        
         products.push({
             title: `${categoryName} Design ${i + 1}`,
             description: `Premium custom ${categoryName.toLowerCase()}`,
             image: baseImages[i % baseImages.length],
-            price: Math.floor(Math.random() * 500) + 299,
-            originalPrice: Math.floor(Math.random() * 800) + 599,
+            price: price,
+            originalPrice: originalPrice,
+            discount: discount,
             rating: (Math.random() * 1.5 + 3.5).toFixed(1),
             reviewCount: Math.floor(Math.random() * 500) + 50,
-            badge: i % 3 === 0 ? badges[i % badges.length] : null,
-            link: `#product-${i}`,
-            productId: `cat-${currentCategory}-${i}`,
-            cardColor: cardColors[i % cardColors.length]
+            link: `productDetails.html?id=${currentCategory}-${i}`,
+            productId: `cat-${currentCategory}-${i}`
         });
     }
     
@@ -73,51 +73,55 @@ const mixedCategoryProducts = [
 const previouslyViewedProducts = [
     {
         title: 'Custom Design Pro',
-        description: 'Viewed 2 hours ago',
+        description: 'Premium custom design',
         image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop',
         price: 499,
         originalPrice: 999,
+        discount: 50,
         rating: 4.8,
         reviewCount: 234,
-        link: '#prev-1',
+        link: 'productDetails.html?id=prev-1',
         productId: 'prev-001',
-        cardColor: '#F0F0F0'
+        viewedTime: 'Viewed 2 hours ago'
     },
     {
         title: 'Premium Quality Item',
-        description: 'Viewed yesterday',
+        description: 'Premium custom item',
         image: 'https://images.unsplash.com/photo-1562157873-818bc0726f68?w=400&h=400&fit=crop',
         price: 699,
         originalPrice: 1299,
+        discount: 46,
         rating: 4.7,
         reviewCount: 189,
-        link: '#prev-2',
+        link: 'productDetails.html?id=prev-2',
         productId: 'prev-002',
-        cardColor: '#FFF5E5'
+        viewedTime: 'Viewed yesterday'
     },
     {
         title: 'Classic Design',
-        description: 'Viewed 3 days ago',
+        description: 'Premium classic design',
         image: 'https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400&h=400&fit=crop',
         price: 549,
         originalPrice: 999,
+        discount: 45,
         rating: 4.6,
         reviewCount: 156,
-        link: '#prev-3',
+        link: 'productDetails.html?id=prev-3',
         productId: 'prev-003',
-        cardColor: '#E5FFE5'
+        viewedTime: 'Viewed 3 days ago'
     },
     {
         title: 'Modern Style',
-        description: 'Viewed last week',
+        description: 'Premium modern style',
         image: 'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=400&h=400&fit=crop',
         price: 799,
         originalPrice: 1499,
+        discount: 47,
         rating: 4.9,
         reviewCount: 345,
-        link: '#prev-4',
+        link: 'productDetails.html?id=prev-4',
         productId: 'prev-004',
-        cardColor: '#E5F5FF'
+        viewedTime: 'Viewed last week'
     }
 ];
 
@@ -385,8 +389,8 @@ function createGSMCard(gsm) {
  */
 function navigateToSubcategory(subcategoryId) {
     console.log('Navigate to:', currentCategory, subcategoryId);
-    // TODO: Navigate to product listing page
-    alert(`Navigating to ${subcategoryId} products...`);
+    // Navigate to product listing page with filters
+    window.location.href = `productDetails.html?category=${currentCategory}&subcategory=${subcategoryId}`;
 }
 
 /**
@@ -398,38 +402,87 @@ function renderRelatedProducts() {
     // Section 1: Popular Choices
     document.getElementById('related-section-1-title').textContent = `Popular ${categoryName}`;
     const products1 = generateCategoryProducts(categoryName, 6);
-    renderProducts(products1, 'related-products-1', { variant: 'default' });
+    renderProductSection(products1, 'related-products-1');
     
     // Section 2: Trending Now
     document.getElementById('related-section-2-title').textContent = `Trending ${categoryName}`;
     const products2 = generateCategoryProducts(categoryName, 6);
-    renderProducts(products2, 'related-products-2', { variant: 'curved-bottom' });
+    renderProductSection(products2, 'related-products-2');
     
     // Section 3: Best Sellers
     document.getElementById('related-section-3-title').textContent = `Best Selling ${categoryName}`;
     const products3 = generateCategoryProducts(categoryName, 6);
-    renderProducts(products3, 'related-products-3', { variant: 'curved-all' });
+    renderProductSection(products3, 'related-products-3');
 }
 
 /**
  * Render previously viewed products
  */
 function renderPreviouslyViewed() {
-    renderProducts(previouslyViewedProducts, 'previously-viewed', { 
-        variant: 'colored', 
-        enableCardColors: true 
-    });
+    renderProductSection(previouslyViewedProducts, 'previously-viewed');
 }
 
 /**
  * Render mixed categories section
  */
 function renderMixedCategories() {
-    renderProducts(mixedCategoryProducts, 'mixed-categories', { 
-        variant: 'colored', 
-        enableCardColors: true,
-        gridCols: 6
-    });
+    renderProductSection(mixedCategoryProducts, 'mixed-categories');
+}
+
+/**
+ * Render product section with consistent card design
+ */
+function renderProductSection(products, containerId) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    container.innerHTML = products.map(product => createProductCard(product)).join('');
+}
+
+/**
+ * Create product card HTML matching reference design
+ */
+function createProductCard(product) {
+    const discount = product.discount || Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+    const viewedTime = product.viewedTime || '';
+    
+    return `
+        <a href="${product.link}" class="product-card-link">
+            <div class="product-card-detail">
+                <div class="product-card-image">
+                    <img src="${product.image}" alt="${product.title}" loading="lazy">
+                </div>
+                <div class="product-card-info">
+                    <h3 class="product-card-title">${product.title}</h3>
+                    <p class="product-card-description">${product.description}</p>
+                    ${viewedTime ? `<p class="product-viewed-time">${viewedTime}</p>` : ''}
+                    
+                    <div class="product-card-rating">
+                        <div class="rating-badge">
+                            <span class="rating-value">${product.rating}</span>
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="#FFA500" stroke="none">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <span class="review-count">(${product.reviewCount})</span>
+                    </div>
+                    
+                    <div class="product-card-pricing">
+                        <div class="product-price-row">
+                            <span class="product-discount">₹${product.price}</span>
+                            <span class="product-original-price">₹${product.originalPrice}</span>
+                            <span class="product-discount-badge">${discount}% OFF</span>
+                        </div>
+                    </div>
+                </div>
+                <button class="product-card-arrow" aria-label="View product">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+        </a>
+    `;
 }
 
 /**
