@@ -43,6 +43,45 @@ body {
     overflow-x: hidden;
 }
 
+/* ========== ICON STYLING ========== */
+.icon {
+    display: inline-block;
+    width: auto;
+    height: 1.25em;
+    vertical-align: middle;
+}
+
+/* White icons for dark backgrounds (header) */
+.header .icon {
+    filter: brightness(0) invert(1);
+}
+
+/* Black icon for login button (white background) */
+.login-btn .icon {
+    filter: brightness(0);
+}
+
+/* Dark icons for view-all links */
+.view-all .icon {
+    filter: brightness(0) saturate(100%) opacity(0.72);
+    height: 1em;
+}
+
+.view-all:hover .icon {
+    filter: brightness(0) saturate(100%) opacity(0.95);
+}
+
+/* Carousel button icons */
+.carousel-btn .icon {
+    filter: brightness(0) saturate(100%) opacity(0.72);
+    transition: all 0.3s ease;
+    height: 24px;
+}
+
+.carousel-btn:hover .icon {
+    filter: brightness(0) invert(1);
+}
+
 /* ========== MAIN CONTAINER ========== */
 .main-container {
     max-width: var(--container-width);
@@ -246,9 +285,11 @@ body {
 /* ========== SECTION HEADERS ========== */
 .section-header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0 24px 20px;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .section-header h2 {
@@ -256,6 +297,7 @@ body {
     font-weight: 700;
     color: var(--gray-900);
     letter-spacing: -0.5px;
+    text-align: center;
 }
 
 .view-all {
@@ -324,6 +366,12 @@ body {
 .category-unit:hover .category-icon {
     background: var(--gray-100);
     transform: scale(1.1) rotate(5deg);
+}
+
+.category-icon-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
 }
 
 .category-name {
@@ -604,10 +652,6 @@ body {
 .carousel-btn:hover {
     background: var(--color-black);
     border-color: var(--color-black);
-}
-
-.carousel-btn:hover svg {
-    stroke: var(--color-white);
 }
 
 .special-carousel {

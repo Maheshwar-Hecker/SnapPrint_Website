@@ -209,17 +209,24 @@ function loadHeroImages() {
  */
 async function loadCategoryData() {
     try {
-        const response = await fetch('data/product_sub.json');
-        const allCategories = await response.json();
-        categoryData = allCategories[currentCategory];
+        const response = await fetch('data/categories_subcategories.json');
+        const data = await response.json();
+        categoryData = data.categories[currentCategory];
         
         if (!categoryData) {
             console.error('Category not found:', currentCategory);
             // Fallback to tshirts
-            categoryData = allCategories['tshirts'];
+            categoryData = data.categories['tshirts'];
         }
     } catch (error) {
         console.error('Error loading category data:', error);
+        // Fallback data
+        categoryData = {
+            name: 'Products',
+            icon: '📦',
+            description: 'Custom printed products',
+            subcategories: []
+        };
     }
 }
 
@@ -284,28 +291,40 @@ function renderSubcategories() {
  */
 function createSubcategoryCard(subcategory) {
     return `
-        <div class="subcategory-card" onclick="navigateToSubcategory('${subcategory.id}')">
+        <div class="subcategory-card">
             <div class="subcategory-card-image">
                 <img src="${subcategory.image}" alt="${subcategory.name}" loading="lazy">
+                <div class="subcategory-wishlist" onclick="event.stopPropagation(); toggleWishlist('${subcategory.id}')">
+                    <svg viewBox="0 0 24 24" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                </div>
             </div>
             <div class="subcategory-card-content">
                 <h3 class="subcategory-name">${subcategory.name}</h3>
                 <p class="subcategory-description">${subcategory.description}</p>
-                <div class="subcategory-count">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="3" width="7" height="7"/>
-                        <rect x="14" y="3" width="7" height="7"/>
-                        <rect x="14" y="14" width="7" height="7"/>
-                        <rect x="3" y="14" width="7" height="7"/>
-                    </svg>
-                    ${subcategory.productCount} Products
+                <div class="subcategory-footer">
+                    <div class="subcategory-count">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"/>
+                            <rect x="14" y="3" width="7" height="7"/>
+                            <rect x="14" y="14" width="7" height="7"/>
+                            <rect x="3" y="14" width="7" height="7"/>
+                        </svg>
+                        ${subcategory.productCount || '25+'} Products
+                    </div>
+                    <div class="subcategory-actions">
+                        <button class="subcategory-btn btn-explore" onclick="navigateToSubcategory('${subcategory.id}')">
+                            <span>Explore</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                        <button class="subcategory-btn btn-view-more" onclick="navigateToSubcategory('${subcategory.id}')">
+                            <span>View More</span>
+                        </button>
+                    </div>
                 </div>
-                <button class="view-subcategory-btn">
-                    View Collection
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </button>
             </div>
         </div>
     `;
@@ -316,30 +335,40 @@ function createSubcategoryCard(subcategory) {
  */
 function createColorCard(color) {
     return `
-        <div class="subcategory-card color-card" onclick="navigateToSubcategory('${color.id}')" data-color="${color.color}">
+        <div class="subcategory-card color-card" data-color="${color.color}">
             <div class="subcategory-card-image">
                 <img src="${color.image}" alt="${color.name}" loading="lazy">
-                <div class="color-overlay" style="background: ${color.color}; opacity: 0.3;"></div>
+                <div class="subcategory-wishlist" onclick="event.stopPropagation(); toggleWishlist('${color.id}')">
+                    <svg viewBox="0 0 24 24" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                </div>
             </div>
             <div class="subcategory-card-content">
-                <div class="color-swatch" style="background: ${color.color};"></div>
                 <h3 class="subcategory-name">${color.name}</h3>
                 <p class="subcategory-description">${color.description}</p>
-                <div class="subcategory-count">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="3" width="7" height="7"/>
-                        <rect x="14" y="3" width="7" height="7"/>
-                        <rect x="14" y="14" width="7" height="7"/>
-                        <rect x="3" y="14" width="7" height="7"/>
-                    </svg>
-                    ${color.productCount} Products
+                <div class="subcategory-footer">
+                    <div class="subcategory-count">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"/>
+                            <rect x="14" y="3" width="7" height="7"/>
+                            <rect x="14" y="14" width="7" height="7"/>
+                            <rect x="3" y="14" width="7" height="7"/>
+                        </svg>
+                        ${color.productCount || '30+'} Products
+                    </div>
+                    <div class="subcategory-actions">
+                        <button class="subcategory-btn btn-explore" onclick="navigateToSubcategory('${color.id}')">
+                            <span>Explore</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                        <button class="subcategory-btn btn-view-more" onclick="navigateToSubcategory('${color.id}')">
+                            <span>View More</span>
+                        </button>
+                    </div>
                 </div>
-                <button class="view-subcategory-btn">
-                    Shop ${color.name.split(' ')[0]}
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </button>
             </div>
         </div>
     `;
@@ -350,35 +379,40 @@ function createColorCard(color) {
  */
 function createGSMCard(gsm) {
     return `
-        <div class="subcategory-card gsm-card" onclick="navigateToSubcategory('${gsm.id}')">
+        <div class="subcategory-card gsm-card">
             <div class="subcategory-card-image">
                 <img src="${gsm.image}" alt="${gsm.name}" loading="lazy">
-                <div class="gsm-badge">${gsm.gsm} GSM</div>
+                <div class="subcategory-wishlist" onclick="event.stopPropagation(); toggleWishlist('${gsm.id}')">
+                    <svg viewBox="0 0 24 24" stroke-width="2">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                    </svg>
+                </div>
             </div>
             <div class="subcategory-card-content">
-                <div class="gsm-label">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
-                    </svg>
-                    <span>${gsm.weight}</span>
-                </div>
-                <h3 class="subcategory-name">${gsm.name}</h3>
+                <h3 class="subcategory-name">${gsm.name} - ${gsm.gsm}GSM</h3>
                 <p class="subcategory-description">${gsm.description}</p>
-                <div class="subcategory-count">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="3" width="7" height="7"/>
-                        <rect x="14" y="3" width="7" height="7"/>
-                        <rect x="14" y="14" width="7" height="7"/>
-                        <rect x="3" y="14" width="7" height="7"/>
-                    </svg>
-                    ${gsm.productCount} Products
+                <div class="subcategory-footer">
+                    <div class="subcategory-count">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="7" height="7"/>
+                            <rect x="14" y="3" width="7" height="7"/>
+                            <rect x="14" y="14" width="7" height="7"/>
+                            <rect x="3" y="14" width="7" height="7"/>
+                        </svg>
+                        ${gsm.productCount || '20+'} Products
+                    </div>
+                    <div class="subcategory-actions">
+                        <button class="subcategory-btn btn-explore" onclick="navigateToSubcategory('${gsm.id}')">
+                            <span>Explore</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                        <button class="subcategory-btn btn-view-more" onclick="navigateToSubcategory('${gsm.id}')">
+                            <span>View More</span>
+                        </button>
+                    </div>
                 </div>
-                <button class="view-subcategory-btn">
-                    View ${gsm.gsm} GSM
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M5 12h14M12 5l7 7-7 7"/>
-                    </svg>
-                </button>
             </div>
         </div>
     `;
@@ -515,3 +549,56 @@ function initHamburgerMenu() {
 function formatCurrency(amount) {
     return `₹${amount.toLocaleString('en-IN')}`;
 }
+
+/**
+ * Toggle wishlist
+ */
+function toggleWishlist(itemId) {
+    const wishlistBtn = event.currentTarget;
+    wishlistBtn.classList.toggle('active');
+    
+    // Show feedback
+    const feedback = wishlistBtn.classList.contains('active') ? 'Added to wishlist' : 'Removed from wishlist';
+    showNotification(feedback);
+    
+    console.log('Wishlist toggled:', itemId);
+}
+
+/**
+ * Add to cart
+ */
+function addToCart(itemId) {
+    showNotification('Added to cart!');
+    console.log('Add to cart:', itemId);
+}
+
+/**
+ * Show notification
+ */
+function showNotification(message) {
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 16px 24px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 500;
+        z-index: 10000;
+        animation: slideInUp 0.3s ease-out;
+    `;
+    notification.textContent = message;
+    
+    document.body.appendChild(notification);
+    
+    // Remove after 2 seconds
+    setTimeout(() => {
+        notification.style.animation = 'slideOutDown 0.3s ease-out';
+        setTimeout(() => notification.remove(), 300);
+    }, 2000);
+}
+

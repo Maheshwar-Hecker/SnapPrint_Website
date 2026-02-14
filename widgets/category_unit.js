@@ -24,10 +24,16 @@ function createCategoryUnit(config) {
 
     const countText = count > 0 ? `${count} Product${count !== 1 ? 's' : ''}` : 'Explore';
 
+    // Check if icon is an image path or emoji
+    const isImagePath = icon.includes('/');
+    const iconHTML = isImagePath 
+        ? `<img src="${icon}" alt="${name}" class="category-icon-img">` 
+        : icon;
+
     return `
         <a href="${link}" class="category-unit category-${theme}" data-category="${name}">
             <div class="category-icon">
-                ${icon}
+                ${iconHTML}
             </div>
             <div class="category-name">${name}</div>
             ${showCount ? `<div class="category-count">${countText}</div>` : ''}
@@ -56,16 +62,16 @@ function renderCategories(categories, containerId) {
 
 // Category icons mapping (can be extended)
 const categoryIcons = {
-    'T-Shirts': '👕',
-    'Hoodies': '🧥',
-    'Mugs & Cups': '☕',
-    'Phone Cases': '📱',
-    'Photo Frames': '🖼️',
-    'Key Chains': '🔑',
-    'Face Masks': '😷',
-    'Tote Bags': '👜',
-    'Pendants': '💎',
-    'Slippers': '🩴',
+    'T-Shirts': 'constants/icons/tshirt.svg',
+    'Hoodies': 'constants/icons/hoodie.svg',
+    'Mugs & Cups': 'constants/icons/mug.svg',
+    'Phone Cases': 'constants/icons/phone-case.svg',
+    'Photo Frames': 'constants/icons/frame.svg',
+    'Key Chains': 'constants/icons/keychain.svg',
+    'Face Masks': 'constants/icons/facemask.svg',
+    'Tote Bags': 'constants/icons/tote-bag.svg',
+    'Pendants': 'constants/icons/pendant.svg',
+    'Slippers': 'constants/icons/slipper.svg',
     'Wooden Items': '🪵',
     'Stone Pasting': '💍',
     'Child Costume': '👶',

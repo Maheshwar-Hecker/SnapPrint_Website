@@ -53,16 +53,16 @@ const heroSlides = [
 ];
 
 const categories = [
-    { name: 'T-Shirts', icon: '👕', count: 150, link: 'productCategory.html?category=tshirts' },
-    { name: 'Hoodies', icon: '🧥', count: 80, link: 'productCategory.html?category=hoodies' },
-    { name: 'Mugs & Cups', icon: '☕', count: 120, link: 'productCategory.html?category=cups' },
-    { name: 'Phone Cases', icon: '📱', count: 200, link: 'productCategory.html?category=2DMobileCover' },
-    { name: 'Photo Frames', icon: '🖼️', count: 90, link: 'productCategory.html?category=woodenFrame' },
-    { name: 'Key Chains', icon: '🔑', count: 65, link: 'productCategory.html?category=keyChain' },
-    { name: 'Face Masks', icon: '😷', count: 45, link: 'productCategory.html?category=facemask' },
-    { name: 'Tote Bags', icon: '👜', count: 75, link: 'productCategory.html?category=toteBags' },
-    { name: 'Pendants', icon: '💎', count: 55, link: 'productCategory.html?category=pendant' },
-    { name: 'Slippers', icon: '🩴', count: 40, link: 'productCategory.html?category=slipperPrint' }
+    { name: 'T-Shirts', icon: 'constants/icons/tshirt.svg', count: 150, link: 'productCategory.html?category=tshirts' },
+    { name: 'Hoodies', icon: 'constants/icons/hoodie.svg', count: 80, link: 'productCategory.html?category=hoodies' },
+    { name: 'Mugs & Cups', icon: 'constants/icons/mug.svg', count: 120, link: 'productCategory.html?category=cups' },
+    { name: 'Phone Cases', icon: 'constants/icons/phone-case.svg', count: 200, link: 'productCategory.html?category=2DMobileCover' },
+    { name: 'Photo Frames', icon: 'constants/icons/frame.svg', count: 90, link: 'productCategory.html?category=woodenFrame' },
+    { name: 'Key Chains', icon: 'constants/icons/keychain.svg', count: 65, link: 'productCategory.html?category=keyChain' },
+    { name: 'Face Masks', icon: 'constants/icons/facemask.svg', count: 45, link: 'productCategory.html?category=facemask' },
+    { name: 'Tote Bags', icon: 'constants/icons/tote-bag.svg', count: 75, link: 'productCategory.html?category=toteBags' },
+    { name: 'Pendants', icon: 'constants/icons/pendant.svg', count: 55, link: 'productCategory.html?category=pendant' },
+    { name: 'Slippers', icon: 'constants/icons/slipper.svg', count: 40, link: 'productCategory.html?category=slipperPrint' }
 ];
 
 const featuredProducts = [
