@@ -8,35 +8,50 @@
     "pincode": "208024",
     "analytics": {
         "categoryInterests": {
-            "Hoodies": 8,
-            "Mugs & Cups": 3,
-            "Footwear": 2,
-            "Phone Cases": 4,
-            "T-Shirts": 22,
+            "Hoodies": 15,
+            "Mugs & Cups": 5,
+            "Footwear": 14,
+            "Phone Cases": 6,
+            "T-Shirts": 30,
             "Face Masks": 4,
-            "Key Chains": 5,
-            "Photo Frames": 2
+            "Key Chains": 9,
+            "Photo Frames": 2,
+            "Pendants": 6,
+            "Tote Bags": 4
         },
         "subcategoryInterests": {
             "Cartoon": 1,
             "Slides": 1,
             "Outdoor": 1,
-            "Wooden": 1
+            "Wooden": 1,
+            "Slim Fit": 1,
+            "Waterproof": 1,
+            "Foldable": 3,
+            "Plain": 1,
+            "Pocket": 1
         },
         "badgeInterests": {
             "New Arrival": 2,
-            "Limited Edition": 1,
-            "Special": 1
+            "Limited Edition": 4,
+            "Special": 2,
+            "Bestseller": 1,
+            "Trending": 1,
+            "Occasional": 1
         },
         "viewHistory": [
+            "prod-totebags-foldable-2",
+            "prod-t-shirts-menclothing-pocket-1",
+            "prod-t-shirts-menclothing-plain-3",
+            "prod-totebags-waterproof-2",
+            "prod-hoodies-womenclothing-slimfit-4",
             "prod-keychains-wooden-1",
             "prod-footwear-womenclothing-outdoor-5",
             "prod-footwear-womenclothing-slides-2",
             "prod-mugs&cups-cartoon-4"
         ],
-        "lastInteracted": 1775989505135
+        "lastInteracted": 1776027471525
     },
-    "lastSync": "2026-04-12 12:25:05",
+    "lastSync": "2026-04-12 22:57:51",
     "availedCoupons": [
         "FESTIVE_PRINT",
         "PRINT_PRO",
