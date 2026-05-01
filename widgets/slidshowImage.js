@@ -48,6 +48,7 @@ class SlideshowWidget {
                                 src="${slide.image}" 
                                 alt="${slide.alt || 'Slide ' + (index + 1)}"
                                 class="slide-image"
+                                loading="${index === 0 ? 'eager' : 'lazy'}"
                                 style="${this.adaptiveWidth && slide.aspectRatio ? `aspect-ratio: ${slide.aspectRatio};` : ''}"
                             />
                             ${slide.caption ? `

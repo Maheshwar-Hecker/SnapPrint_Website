@@ -1,0 +1,25 @@
+# SnapPrint Robots.txt
+# Allow all crawlers to index public pages
+
+User-agent: *
+Allow: /
+Allow: /index.html
+Allow: /searchPage.html
+Allow: /productCategory.html
+Allow: /productDetails.html
+Allow: /wishlist.html
+Allow: /profile.html
+Allow: /constants/
+Allow: /styles/
+Allow: /widgets/
+Allow: /scripts/
+
+# Disallow private/sensitive paths
+Disallow: /data/users_index.json
+Disallow: /data/wishlists.json
+Disallow: /data/profiles/
+Disallow: /api/
+Disallow: /scratch/
+
+# Sitemap location
+Sitemap: https://snapprint.in/sitemap.xml

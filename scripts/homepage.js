@@ -83,87 +83,98 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Load and render Promo Banners dynamically
     await loadAndRenderPromos();
 
-    // Render categories
+    // Render categories immediately so there is zero lag
     renderCategories(categories, 'category-grid');
 
-    // Fetch dynamic products
-    const featuredProducts = await window.dataService.getRandomProducts(6);
-    const specialOccasions = await window.dataService.getRandomProducts(6);
-    const flashSales = await window.dataService.getRandomProducts(8);
-    const trendingProducts = await window.dataService.getRandomProducts(6);
-    const newArrivals = await window.dataService.getRandomProducts(6);
-    const mostLovedProducts = await window.dataService.getRandomProducts(6);
-    const curatedCollections = await window.dataService.getRandomProducts(8);
-    const bestSellers = await window.dataService.getRandomProducts(8);
-    const youMightLike = await window.dataService.getRecommendedProducts(12);
-    const recentlyViewed = await window.dataService.getRecentlyViewedProducts(8);
+    // Fetch dynamic products and discounts asynchronously without blocking the UI
+    (async () => {
+        try {
+            // Fetch discounts in parallel
+            const discPromise = fetch('data/discounts.json').then(r => r.json()).catch(e => { console.warn(e); return null; });
+            
+            // Pre-flatten database once
+            await window.dataService.getAllProductsFlattened();
+            
+            // Now run all random generators concurrently
+            const [
+                featuredProducts, specialOccasions, flashSales, trendingProducts,
+                newArrivals, mostLovedProducts, curatedCollections, bestSellers,
+                youMightLike, recentlyViewed, surprisePicks, randomFinal, discData
+            ] = await Promise.all([
+                window.dataService.getRandomProducts(6),
+                window.dataService.getRandomProducts(6),
+                window.dataService.getRandomProducts(8),
+                window.dataService.getRandomProducts(6),
+                window.dataService.getRandomProducts(6),
+                window.dataService.getRandomProducts(6),
+                window.dataService.getRandomProducts(8),
+                window.dataService.getRandomProducts(8),
+                window.dataService.getRecommendedProducts(12),
+                window.dataService.getRecentlyViewedProducts(8),
+                window.dataService.getRandomProducts(12),
+                window.dataService.getRandomProducts(12),
+                discPromise
+            ]);
 
-    // Fetch and render Discounts
-    try {
-        const discResponse = await fetch('data/discounts.json');
-        const discData = await discResponse.json();
-        const discContainer = document.getElementById('special-offers');
-        if (discContainer && discData.discounts) {
-            discContainer.innerHTML = discData.discounts.map(d => window.createDiscountCard(d)).join('');
-            initCarouselNav('special-offers');
+            // Render Discounts
+            if (discData && discData.discounts) {
+                const discContainer = document.getElementById('special-offers');
+                if (discContainer) {
+                    discContainer.innerHTML = discData.discounts.map(d => window.createDiscountCard(d)).join('');
+                    initCarouselNav('special-offers');
+                }
+            }
+
+            // Render product sections
+            renderProducts(featuredProducts, 'featured-products', { variant: 'default' });
+            renderProducts(specialOccasions, 'special-occasions', { variant: 'colored', enableCardColors: true });
+            renderProducts(flashSales, 'flash-sales', { variant: 'curved-all' });
+            renderProducts(trendingProducts, 'trending-products', { variant: 'curved-bottom' });
+            renderProducts(newArrivals, 'new-arrivals', { variant: 'default' });
+
+            if (recentlyViewed.length > 0) {
+                document.getElementById('recently-viewed').parentElement.style.display = 'block';
+                renderProducts(recentlyViewed, 'recently-viewed', { variant: 'colored', enableCardColors: true });
+            } else {
+                document.getElementById('recently-viewed').parentElement.style.display = 'none';
+            }
+
+            renderProducts(curatedCollections, 'curated-collections', { variant: 'curved-bottom' });
+            renderProducts(bestSellers, 'best-sellers', { variant: 'curved-all' });
+            renderProducts(mostLovedProducts, 'most-loved', { variant: 'curved-bottom' });
+            renderProducts(youMightLike, 'you-might-like', { variant: 'colored', enableCardColors: true });
+
+            const mixedGrid = document.getElementById('you-might-like');
+            if (mixedGrid) mixedGrid.classList.add('product-grid-dense');
+
+            const randomContainer = document.getElementById('random-discoveries');
+            if (randomContainer) {
+                const surpriseHtml = `
+                    <section class="products-section surprise-section">
+                        <div class="section-header">
+                            <h2>✨ Surprise Picks</h2>
+                            <p class="section-subtitle">Something out of the blue, just for you</p>
+                        </div>
+                        <div id="surprise-picks" class="product-grid product-grid-dense"></div>
+                    </section>
+                `;
+                randomContainer.parentElement.insertAdjacentHTML('beforebegin', surpriseHtml);
+                renderProducts(surprisePicks, 'surprise-picks', { variant: 'default' });
+            }
+
+            renderProducts(randomFinal, 'random-discoveries', { variant: 'default' });
+            if (randomContainer) randomContainer.classList.add('product-grid-dense');
+
+            // Initialize wishlist states
+            setTimeout(() => {
+                if (typeof initializeWishlistStates === 'function') {
+                    initializeWishlistStates();
+                }
+            }, 100);
+        } catch (error) {
+            console.error("Error loading homepage products:", error);
         }
-    } catch (e) {
-        console.warn('Discounts failed to load:', e);
-    }
-
-    // Render product sections (using the global widget function)
-    renderProducts(featuredProducts, 'featured-products', { variant: 'default' });
-    renderProducts(specialOccasions, 'special-occasions', { variant: 'colored', enableCardColors: true });
-    renderProducts(flashSales, 'flash-sales', { variant: 'curved-all' });
-    renderProducts(trendingProducts, 'trending-products', { variant: 'curved-bottom' });
-    renderProducts(newArrivals, 'new-arrivals', { variant: 'default' });
-
-    // Render Recently Viewed if exists
-    if (recentlyViewed.length > 0) {
-        document.getElementById('recently-viewed').parentElement.style.display = 'block';
-        renderProducts(recentlyViewed, 'recently-viewed', { variant: 'colored', enableCardColors: true });
-    } else {
-        document.getElementById('recently-viewed').parentElement.style.display = 'none';
-    }
-
-    renderProducts(curatedCollections, 'curated-collections', { variant: 'curved-bottom' });
-    renderProducts(bestSellers, 'best-sellers', { variant: 'curved-all' });
-    const surprisePicks = await window.dataService.getRandomProducts(12);
-    const randomFinal = await window.dataService.getRandomProducts(12);
-
-    // Final high-density sections
-    renderProducts(mostLovedProducts, 'most-loved', { variant: 'curved-bottom' });
-    renderProducts(youMightLike, 'you-might-like', { variant: 'colored', enableCardColors: true });
-
-    // Add denser look to final sections
-    const mixedGrid = document.getElementById('you-might-like');
-    if (mixedGrid) mixedGrid.classList.add('product-grid-dense');
-
-    // Surprise Section - Insert before random
-    const randomContainer = document.getElementById('random-discoveries');
-    if (randomContainer) {
-        const surpriseHtml = `
-            <section class="products-section surprise-section">
-                <div class="section-header">
-                    <h2>✨ Surprise Picks</h2>
-                    <p class="section-subtitle">Something out of the blue, just for you</p>
-                </div>
-                <div id="surprise-picks" class="product-grid product-grid-dense"></div>
-            </section>
-        `;
-        randomContainer.parentElement.insertAdjacentHTML('beforebegin', surpriseHtml);
-        renderProducts(surprisePicks, 'surprise-picks', { variant: 'default' });
-    }
-
-    renderProducts(randomFinal, 'random-discoveries', { variant: 'default' });
-    if (randomContainer) randomContainer.classList.add('product-grid-dense');
-
-    // Initialize wishlist states
-    setTimeout(() => {
-        if (typeof initializeWishlistStates === 'function') {
-            initializeWishlistStates();
-        }
-    }, 100);
+    })();
 
     // Add scroll animations
     addScrollAnimations();

@@ -9,12 +9,12 @@ const categoryIcons = {
     'Footwear': 'constants/images/footwear.png',
     'Hoodies': 'constants/images/Hoodies.png',
     'Jewelry': 'constants/images/Jwellery.png',
-    'Key Chains': 'https://images.unsplash.com/photo-1590650213165-c1fef80648c4?w=500&h=500&fit=crop',
+    'Key Chains': 'constants/images/KeyChains.png',
     'Kids Clothing': 'constants/images/Kids Special.png',
     'Mugs & Cups': 'constants/images/Mugs and Cups.png',
     'Pendants': 'constants/images/pendants.png',
     'Phone Cases': 'constants/images/phoneCases.png',
-    'Photo Frames': 'https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?w=500&h=500&fit=crop',
+    'Photo Frames': 'constants/images/PhotoFrames.png',
     'T-Shirts': 'constants/images/Tshirts.png',
     'Tote Bags': 'constants/images/TOTABAGS.png',
     "Men's Special": 'constants/images/MensSpecial.png',
@@ -50,15 +50,21 @@ function createCategoryUnit(config) {
     const sizeClass = sizeMapping[name] || "category-small";
     const isImagePath = icon.includes('/');
     
-    // Default background color applied if image doesn't load fully
-    const bgStyle = isImagePath ? `style="background-image: url('${icon}'); background-color: #f4f4f4;"` : 'style="background-color: #f4f4f4;"';
-    
     // Assign a theme color based on the category name
     const themeColor = ringColors[name.length % ringColors.length];
 
+    let bgHtml = '';
+    if (isImagePath) {
+        // Use encodeURI for paths with spaces to ensure hosting compatibility
+        const encodedIcon = encodeURI(icon);
+        bgHtml = `<img src="${encodedIcon}" class="category-bg" loading="lazy" alt="${name}" onload="this.classList.add('loaded')" style="background-color: #f4f4f4;">`;
+    } else {
+        bgHtml = `<div class="category-bg loaded" style="background-color: #f4f4f4;"></div><span class="category-emoji">${icon}</span>`;
+    }
+
     return `
         <a href="${link}" class="category-unit ${sizeClass}" data-category="${name}" style="--theme-color: ${themeColor}">
-            <div class="category-bg" ${bgStyle}></div>
+            ${bgHtml}
             <div class="category-overlay"></div>
             <div class="category-content">
                 <div class="category-name">${name}</div>

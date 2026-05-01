@@ -38,28 +38,24 @@
       "floatingIcon": "constants/icons/heart.svg"
     },
     {
-      "title": "Custom Mugs",
-      "subtitle": "Sip in style with personalized mugs",
-      "image": "constants/promos/mugs_promo_bg.png",
-      "buttonText": "Shop Mugs",
-      "link": "productCategory.html?category=Mugs & Cups",
-      "gradient": "linear-gradient(to right, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0))"
-    },
-    {
-      "title": "Premium Stationery",
-      "subtitle": "Notebooks, pens & business cards",
-      "image": "constants/promos/stationery_promo_bg.png",
-      "buttonText": "Shop Stationery",
-      "link": "searchPage.html?q=stationery",
-      "gradient": "linear-gradient(to right, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0))"
-    },
-    {
-      "title": "Wall Art & Posters",
-      "subtitle": "Decorate your space your way",
-      "image": "constants/promos/posters_promo_bg.png",
-      "buttonText": "Shop Posters",
+      "title": "Photo Frames",
+      "subtitle": "Display life's best moments",
+      "image": "constants/categories/frames-banner.jpg",
+      "buttonText": "Explore Collection",
       "link": "productCategory.html?category=Photo Frames",
-      "gradient": "linear-gradient(to right, rgba(255, 255, 255, 0.9) 40%, rgba(255, 255, 255, 0))"
+      "gradient": "linear-gradient(to right, rgba(0, 0, 0, 0.7) 40%, rgba(0, 0, 0, 0))",
+      "textColorTitle": "white",
+      "textColorSubtitle": "#e2e8f0"
+    },
+    {
+      "title": "Key Chains",
+      "subtitle": "Small Item. Big Meaning.",
+      "image": "constants/categories/keychains-banner.jpg",
+      "buttonText": "Shop Keychains",
+      "link": "productCategory.html?category=Key Chains",
+      "gradient": "linear-gradient(to right, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.1))",
+      "textColorTitle": "white",
+      "textColorSubtitle": "#e2e8f0"
     }
   ]
 }

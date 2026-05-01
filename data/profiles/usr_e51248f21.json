@@ -26,12 +26,15 @@
     "analytics": {
         "categoryInterests": {
             "T-Shirts": 4,
-            "Decor": 8
+            "Decor": 8,
+            "Men's Special": 4,
+            "Phone Cases": 2,
+            "Women's Special": 2
         },
         "subcategoryInterests": [],
         "badgeInterests": [],
         "viewHistory": [],
-        "lastInteracted": 1777510544837
+        "lastInteracted": 1777631900292
     },
-    "lastSync": "2026-04-30 02:55:44"
+    "lastSync": "2026-05-01 12:38:20"
 }
