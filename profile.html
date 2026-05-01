@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | SnapPrint</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/homepage.css">
+    <link rel="stylesheet" href="styles/loginModal.css">
+    <link rel="stylesheet" href="styles/profile.css">
+
+    <link rel="stylesheet" href="styles/loader.css">
+    <script src="scripts/loader.js"></script>
+    <link rel="icon" type="image/x-icon" href="constants/images/favicon.ico">
+    <link rel="apple-touch-icon" href="constants/images/apple-touch-icon.png">
+</head>
+<body>
+    <!-- Global Loader -->
+    <div id="global-loader">
+        <div class="loader-container">
+            <div class="loader-header skeleton-box">
+                <div class="skeleton-logo skeleton-box" style="background: #e2e4e8;"></div>
+                <div class="skeleton-search skeleton-box" style="background: #e2e4e8;"></div>
+                <div class="skeleton-nav-items">
+                    <div class="skeleton-nav-item skeleton-box" style="background: #e2e4e8;"></div>
+                    <div class="skeleton-nav-item skeleton-box" style="background: #e2e4e8;"></div>
+                    <div class="skeleton-nav-item skeleton-box" style="background: #e2e4e8;"></div>
+                </div>
+            </div>
+            <div class="loader-hero skeleton-box"></div>
+            <div class="loader-content">
+                <div class="skeleton-title skeleton-box"></div>
+                <div class="loader-grid">
+                    <div class="skeleton-card">
+                        <div class="skeleton-card-img skeleton-box"></div>
+                        <div class="skeleton-card-text skeleton-box"></div>
+                        <div class="skeleton-card-text short skeleton-box"></div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton-card-img skeleton-box"></div>
+                        <div class="skeleton-card-text skeleton-box"></div>
+                        <div class="skeleton-card-text short skeleton-box"></div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton-card-img skeleton-box"></div>
+                        <div class="skeleton-card-text skeleton-box"></div>
+                        <div class="skeleton-card-text short skeleton-box"></div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton-card-img skeleton-box"></div>
+                        <div class="skeleton-card-text skeleton-box"></div>
+                        <div class="skeleton-card-text short skeleton-box"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <!-- Navigation Header -->
+        <header class="header">
+            <div class="header-top">
+                <button class="hamburger-menu" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div class="logo" style="cursor: pointer;" onclick="window.location.href='/'">
+                    <img src="constants/images/logo.jpeg" alt="SnapPrint - Custom Printing India" style="height: 40px; width: auto; border-radius: 6px;">
+                    <div class="logo-text-container" style="display: flex; flex-direction: column; text-align: left; justify-content: center;">
+                        <h1 style="margin: 0; line-height: 1;">SnapPrint</h1>
+                        <span class="tagline" style="line-height: 1.2; margin-top: 2px;">India's No.1 Custom Printing & Accessories Brand</span>
+                    </div>
+                </div>
+                
+                <div class="search-bar">
+                    <input type="text" placeholder="Search for products, categories...">
+                    <button class="search-btn">
+                        <img src="constants/icons/search.svg" alt="Search" class="icon">
+                    </button>
+                </div>
+
+                <div class="header-actions">
+                    <button class="header-btn" id="wishlist-header-btn" onclick="window.location.href='wishlist.html'">
+                        <img src="constants/icons/heart.svg" alt="Wishlist" class="icon">
+                        <span>Wishlist</span>
+                        <span class="wishlist-badge" id="wishlist-badge" style="display:none;">0</span>
+                    </button>
+                    <button class="header-btn">
+                        <img src="constants/icons/cart.svg" alt="Cart" class="icon">
+                        <span>Cart</span>
+                    </button>
+                    <button class="header-btn login-btn">
+                        <!-- Replaced by GlobalNav if logged in -->
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Profile Dashboard -->
+        <section class="profile-section">
+            <div class="profile-layout">
+                <!-- Sidebar Navigation -->
+                <aside class="profile-sidebar">
+                    <nav class="sidebar-nav">
+                        <button class="nav-item active" data-view="profile">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            <span>My Profile</span>
+                        </button>
+                        <button class="nav-item" data-view="orders">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg>
+                            <span>View Orders</span>
+                        </button>
+                        <button class="nav-item" data-view="payments">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                            <span>Payments</span>
+                        </button>
+                        <button class="nav-item" data-view="refunds">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                            <span>Refunds</span>
+                        </button>
+                        <button class="nav-item" data-view="wishlist">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                            <span>Wishlist</span>
+                        </button>
+                        <button class="nav-item" data-view="cart">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+                            <span>My Cart</span>
+                        </button>
+                        <button class="nav-item" data-view="designs">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                            <span>My Designs</span>
+                        </button>
+                    </nav>
+                </aside>
+
+                <!-- Content Area -->
+                <div class="profile-content">
+                    <div class="profile-header">
+                        <div class="profile-avatar">
+                           <img src="constants/icons/user.svg" alt="Avatar">
+                        </div>
+                        <div>
+                            <h2 id="profile-greeting">Welcome back!</h2>
+                            <p id="profile-phone">+91 ******</p>
+                        </div>
+                    </div>
+
+                    <!-- Profile View -->
+                    <div id="view-profile" class="content-view active">
+                        <div class="profile-grid">
+                            <!-- Personal Info Card -->
+                            <div class="profile-card">
+                                <div class="card-header">
+                                    <h3>Personal Information</h3>
+                                    <button id="edit-profile-btn" class="edit-btn">Edit Details</button>
+                                </div>
+                                <form id="profile-form">
+                                    <div class="form-row">
+                                        <div class="input-group">
+                                            <label>Full Name</label>
+                                            <input type="text" id="profile-name" placeholder="John Doe" disabled>
+                                        </div>
+                                        <div class="input-group">
+                                            <label>Email Address</label>
+                                            <input type="email" id="profile-email" placeholder="john@example.com" disabled>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Phone Number</label>
+                                        <input type="tel" id="profile-phone-input" disabled>
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Complete Address</label>
+                                        <input type="text" id="profile-address" placeholder="123, Street Name, Area" disabled>
+                                    </div>
+                                    <div class="input-group">
+                                        <label>Pincode</label>
+                                        <input type="text" id="profile-pincode" placeholder="110001" maxlength="6" disabled>
+                                    </div>
+                                    <div class="form-actions" style="display: none;">
+                                        <button type="button" id="cancel-edit-btn" class="btn-secondary">Cancel</button>
+                                        <button type="submit" id="save-profile-btn" class="btn-primary">Save Changes</button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- Account Actions -->
+                            <div class="profile-card logout-card">
+                                <div>
+                                    <h3>Account Security</h3>
+                                    <p>Manage your session securely.</p>
+                                </div>
+                                <button class="logout-btn" id="logout-btn">Log out</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Orders View -->
+                    <div id="view-orders" class="content-view">
+                        <div class="profile-card">
+                            <div class="card-header">
+                                <h3>My Orders</h3>
+                            </div>
+                            <div class="orders-list">
+                                <div class="order-item" style="transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.05)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                                    <div class="order-img">
+                                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=100&h=100&fit=crop" alt="product">
+                                    </div>
+                                    <div class="order-details">
+                                        <h4>Premium Custom T-Shirt</h4>
+                                        <p class="order-meta">Order #ORD-89432 • ₹799</p>
+                                        <span class="order-status status-delivered">Delivered on Apr 10</span>
+                                    </div>
+                                </div>
+                                <div class="order-item" style="transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.05)'" onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none'">
+                                    <div class="order-img">
+                                        <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=100&h=100&fit=crop" alt="product">
+                                    </div>
+                                    <div class="order-details">
+                                        <h4>Color Changing Mug</h4>
+                                        <p class="order-meta">Order #ORD-92144 • ₹399</p>
+                                        <span class="order-status status-processing">Processing</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Placeholder Views -->
+                    <div id="view-payments" class="content-view">
+                        <div class="profile-card placeholder-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon" style="color: #6366f1;"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg>
+                            <h3>Saved Payments</h3>
+                            <p>You haven't saved any payment methods yet.</p>
+                        </div>
+                    </div>
+
+                    <div id="view-refunds" class="content-view">
+                        <div class="profile-card placeholder-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon" style="color: #f59e0b;"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                            <h3>Refund History</h3>
+                            <p>No refund requests found.</p>
+                        </div>
+                    </div>
+
+                    <div id="view-wishlist" class="content-view">
+                        <div class="profile-card placeholder-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon" style="color: #ef4444;"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                            <h3>My Wishlist</h3>
+                            <p>Your wishlist is currently empty.</p>
+                            <a href="index.html" class="btn-primary" style="text-decoration: none; display: inline-block; margin-top: 16px;">Browse Products</a>
+                        </div>
+                    </div>
+
+                    <div id="view-cart" class="content-view">
+                        <div class="profile-card placeholder-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon" style="color: #10b981;"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+                            <h3>Your Cart</h3>
+                            <p>Looks like you haven't added anything to your cart.</p>
+                        </div>
+                    </div>
+
+                    <div id="view-designs" class="content-view">
+                        <div class="profile-card placeholder-card">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="placeholder-icon" style="color: #8b5cf6;"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/><path d="m15 5 4 4"/></svg>
+                            <h3>My Custom Designs</h3>
+                            <p>Start creating your first design today!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div id="site-footer"></div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="scripts/authService.js"></script>
+    <script src="scripts/wishlistService.js"></script>
+    <script src="scripts/dataService.js"></script>
+    <script src="widgets/loginModal.js"></script>
+    <script src="scripts/globalNavigation.js"></script>
+    <script src="scripts/profile.js"></script>
+    <script src="widgets/footer.js"></script>
+</body>
+</html>

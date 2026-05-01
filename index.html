@@ -3,13 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SnapPrint - Premium Custom Printing</title>
+    <title>SnapPrint – Custom Printing & Personalized Gifts Online in India</title>
+    <meta name="description" content="SnapPrint offers custom t-shirts, mugs, phone cases, and personalized gifts online in India. Design your own products with fast delivery and premium quality.">
+    <meta name="keywords" content="buy custom t shirts online India, order personalized gifts India, create custom hoodie online, design custom mug online India, custom phone case order online, print photo frame online India, cheap personalized gifts India, best print on demand India, custom printing website India, fast custom gift delivery India">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "SnapPrint",
+      "url": "https://snapprint.in/",
+      "description": "India's No. 1 Custom Printing and Accessories Brand",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://snapprint.in/searchPage.html?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "SnapPrint",
+      "url": "https://snapprint.in/",
+      "logo": "https://snapprint.in/constants/images/logo.jpeg",
+      "description": "India's No. 1 Custom Printing and Accessories Brand"
+    }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/homepage.css">
+    <link rel="stylesheet" href="styles/loginModal.css">
+    <script src="scripts/dataService.js"></script>
+    <script src="scripts/analyticsService.js"></script>
+
+    <link rel="stylesheet" href="styles/loader.css">
+    <link rel="stylesheet" href="styles/category_redesign.css">
+    <script src="scripts/loader.js"></script>
+    <link rel="icon" type="image/x-icon" href="constants/images/favicon.ico">
+    <link rel="apple-touch-icon" href="constants/images/apple-touch-icon.png">
 </head>
 <body>
+    <!-- Global Loader -->
+    <div id="global-loader">
+        <div class="loader-container">
+            <div class="loader-header skeleton-box">
+                <div class="skeleton-logo skeleton-box" style="background: #e2e4e8;"></div>
+                <div class="skeleton-search skeleton-box" style="background: #e2e4e8;"></div>
+                <div class="skeleton-nav-items">
+                    <div class="skeleton-nav-item skeleton-box" style="background: #e2e4e8;"></div>
+                    <div class="skeleton-nav-item skeleton-box" style="background: #e2e4e8;"></div>
+                    <div class="skeleton-nav-item skeleton-box" style="background: #e2e4e8;"></div>
+                </div>
+            </div>
+            <div class="loader-hero skeleton-box"></div>
+            <div class="loader-content">
+                <div class="skeleton-title skeleton-box"></div>
+                <div class="loader-grid">
+                    <div class="skeleton-card">
+                        <div class="skeleton-card-img skeleton-box"></div>
+                        <div class="skeleton-card-text skeleton-box"></div>
+                        <div class="skeleton-card-text short skeleton-box"></div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton-card-img skeleton-box"></div>
+                        <div class="skeleton-card-text skeleton-box"></div>
+                        <div class="skeleton-card-text short skeleton-box"></div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton-card-img skeleton-box"></div>
+                        <div class="skeleton-card-text skeleton-box"></div>
+                        <div class="skeleton-card-text short skeleton-box"></div>
+                    </div>
+                    <div class="skeleton-card">
+                        <div class="skeleton-card-img skeleton-box"></div>
+                        <div class="skeleton-card-text skeleton-box"></div>
+                        <div class="skeleton-card-text short skeleton-box"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Main Container -->
     <div class="main-container">
         <!-- Navigation Header -->
@@ -22,9 +98,12 @@
                     <span></span>
                 </button>
 
-                <div class="logo">
-                    <h1>SnapPrint</h1>
-                    <span class="tagline">Custom Printing Studio</span>
+                <div class="logo" style="cursor: pointer;" onclick="window.location.href='/'">
+                    <img src="constants/images/logo.jpeg" alt="SnapPrint - Custom Printing India" style="height: 40px; width: auto; border-radius: 6px;">
+                    <div class="logo-text-container" style="display: flex; flex-direction: column; text-align: left; justify-content: center;">
+                        <h1 style="margin: 0; line-height: 1;">SnapPrint</h1>
+                        <span class="tagline" style="line-height: 1.2; margin-top: 2px;">India's No.1 Custom Printing & Accessories Brand</span>
+                    </div>
                 </div>
                 
                 <div class="search-bar">
@@ -35,9 +114,10 @@
                 </div>
 
                 <div class="header-actions">
-                    <button class="header-btn">
+                    <button class="header-btn" id="wishlist-header-btn" onclick="window.location.href='wishlist.html'">
                         <img src="constants/icons/heart.svg" alt="Wishlist" class="icon">
                         <span>Wishlist</span>
+                        <span class="wishlist-badge" id="wishlist-badge" style="display:none;">0</span>
                     </button>
                     <button class="header-btn">
                         <img src="constants/icons/cart.svg" alt="Cart" class="icon">
@@ -51,9 +131,44 @@
             </div>
         </header>
 
-        <!-- Hero Slider Section -->
-        <section class="hero-section">
-            <div id="hero-slider" class="hero-slider"></div>
+        <!-- Promo Banners Section (Blinkit Style) -->
+        <section class="promo-banners-section">
+            <div class="promo-banners-container">
+                <!-- Main Wide Banner -->
+                <div class="promo-banner-main" style="background-image: linear-gradient(to right, rgba(230, 40, 70, 0.9), rgba(230, 40, 70, 0.5)), url('constants/promos/discount_promo_bg.png');">
+                    <div class="promo-content-left">
+                        <h2>Mega Print Festival!</h2>
+                        <p>Get up to 50% OFF on all custom prints & corporate orders</p>
+                        <button class="shop-now-btn">Shop Now</button>
+                    </div>
+                </div>
+                
+                <!-- Secondary Banners Grid -->
+                <div class="promo-secondary-grid">
+                    <div class="promo-banner-card womens-promo" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 30%, rgba(255, 255, 255, 0)), url('constants/promos/womens_fashion_bg.png');">
+                        <div class="promo-content">
+                            <h3>Women's Custom Wear</h3>
+                            <p>Design your own unique style</p>
+                            <button class="order-now-btn">Order Now</button>
+                        </div>
+                    </div>
+                    <div class="promo-banner-card mens-promo" style="background-image: linear-gradient(to right, rgba(255, 255, 255, 0.9) 30%, rgba(255, 255, 255, 0)), url('constants/promos/mens_fashion_bg.png');">
+                        <div class="promo-content">
+                            <h3>Men's Urban Streetwear</h3>
+                            <p>Premium customized hoodies & tees</p>
+                            <button class="order-now-btn">Order Now</button>
+                        </div>
+                    </div>
+                    <div class="promo-banner-card mothers-day-promo" style="background: linear-gradient(135deg, #FFEBF0 0%, #FFD1E0 100%);">
+                        <div class="promo-content">
+                            <h3 style="color: #D81B60;">Mother's Day Gifts</h3>
+                            <p style="color: #ad1457; font-family: cursive;">Surprise her with memories...</p>
+                            <button class="order-now-btn mothers-btn">Order Now</button>
+                        </div>
+                        <img src="constants/icons/heart.svg" class="floating-icon" alt="Heart" style="position: absolute; right: 20px; bottom: 20px; width: 60px; opacity: 0.2;">
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Category Grid -->
@@ -201,52 +316,31 @@
             <div id="you-might-like" class="product-grid product-grid-large"></div>
         </section>
 
+        <!-- Random Discoveries -->
+        <section class="products-section random-section">
+            <div class="section-header">
+                <h2>🎲 Random Discoveries</h2>
+                <p class="section-subtitle">Something special for you</p>
+            </div>
+            <div id="random-discoveries" class="product-grid"></div>
+        </section>
+
         <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>About SnapPrint</h3>
-                    <p>Premium custom printing services for all your personalization needs.</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
-                        <li><a href="#">FAQs</a></li>
-                        <li><a href="#">Track Order</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Categories</h3>
-                    <ul>
-                        <li><a href="#">T-Shirts</a></li>
-                        <li><a href="#">Mugs & Cups</a></li>
-                        <li><a href="#">Phone Cases</a></li>
-                        <li><a href="#">Photo Frames</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Customer Service</h3>
-                    <ul>
-                        <li><a href="#">Returns</a></li>
-                        <li><a href="#">Shipping Info</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 SnapPrint. All rights reserved.</p>
-            </div>
-        </footer>
+        <div id="site-footer"></div>
     </div>
 
     <!-- Scripts -->
+    <script src="scripts/authService.js"></script>
+    <script src="scripts/wishlistService.js"></script>
+    <script src="widgets/loginModal.js"></script>
+    <script src="scripts/globalNavigation.js"></script>
     <script src="widgets/slidshowImage.js"></script>
     <script src="widgets/category_unit.js"></script>
     <script src="widgets/productCard.js"></script>
     <script src="widgets/specialProductCards.js"></script>
+    <script src="widgets/discountCard.js"></script>
+    <script src="scripts/scrollReveal.js"></script>
     <script src="scripts/homepage.js"></script>
+    <script src="widgets/footer.js"></script>
 </body>
 </html>

@@ -1,0 +1,79 @@
+{
+    "global": [
+        {
+            "id": "price",
+            "label": "Price Max",
+            "type": "slider",
+            "min": 0,
+            "max": 5000,
+            "step": 50
+        }
+    ],
+    "T-Shirts": [
+        {
+            "id": "material",
+            "label": "Material",
+            "type": "checkbox",
+            "options": ["Cotton", "Polyester", "Dri-Fit", "Supima Cotton", "Cotton Blend"]
+        },
+        {
+            "id": "sleeve",
+            "label": "Sleeve Type",
+            "type": "checkbox",
+            "options": ["Half Sleeve", "Full Sleeve", "Sleeveless"]
+        },
+        {
+            "id": "fit",
+            "label": "Fit",
+            "type": "checkbox",
+            "options": ["Regular Fit", "Slim Fit", "Oversized Fit"]
+        },
+        {
+            "id": "neck",
+            "label": "Neck Type",
+            "type": "checkbox",
+            "options": ["Round Neck", "V Neck", "Polo", "Henley"]
+        },
+        {
+            "id": "color",
+            "label": "Colors",
+            "type": "color",
+            "options": [
+                "White", "Black", "Navy Blue", "Grey", "Red", "Olive Green", 
+                "Maroon", "Yellow", "Purple", "Green", "Kiwi Green", 
+                "Asphalt", "Lilac", "Mint Green", "Ocean Blue", "Soft Pink", 
+                "Sunset Orange", "Teal Green"
+            ]
+        }
+    ],
+    "Hoodies": [
+        {
+            "id": "gsm",
+            "label": "Fabric Thickness (GSM)",
+            "type": "checkbox",
+            "options": ["240", "280", "300", "320"]
+        },
+        {
+            "id": "color",
+            "label": "Colors",
+            "type": "color",
+            "options": ["Black", "White", "Gray", "Navy", "Red"]
+        }
+    ],
+    "Phone Cases": [
+        {
+            "id": "color",
+            "label": "Base Color",
+            "type": "color",
+            "options": ["Clear", "Black", "White", "Navy"]
+        }
+    ],
+    "Mugs & Cups": [
+        {
+            "id": "color",
+            "label": "Inner Color",
+            "type": "color",
+            "options": ["White", "Black", "Red", "Yellow", "Blue"]
+        }
+    ]
+}

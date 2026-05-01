@@ -1,0 +1,1883 @@
+{
+    "categories": [
+        {
+            "id": "cat-decor",
+            "name": "Decor",
+            "subcategories": [
+                {
+                    "id": "sub-crystals",
+                    "name": "Crystals",
+                    "image": "https://picsum.photos/seed/sub-crystals1/400/400",
+                    "description": "Crystals Decor ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Decor/Crystals/products.json"
+                },
+                {
+                    "id": "sub-stones",
+                    "name": "Stones",
+                    "image": "https://picsum.photos/seed/sub-stones1/400/400",
+                    "description": "Stones Decor ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Decor/Stones/products.json"
+                }
+            ]
+        },
+        {
+            "id": "cat-facemasks",
+            "name": "Face Masks",
+            "subcategories": [
+                {
+                    "id": "sub-adjustable",
+                    "name": "Adjustable",
+                    "image": "https://picsum.photos/seed/sub-adjustable1/400/400",
+                    "description": "Adjustable Face Masks ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Face Masks/Adjustable/products.json"
+                },
+                {
+                    "id": "sub-antipollution",
+                    "name": "Anti-Pollution",
+                    "image": "https://picsum.photos/seed/sub-antipollution1/400/400",
+                    "description": "Anti-Pollution Face Masks ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Face Masks/Anti-Pollution/products.json"
+                },
+                {
+                    "id": "sub-cartoon",
+                    "name": "Cartoon",
+                    "image": "https://picsum.photos/seed/sub-cartoon1/400/400",
+                    "description": "Cartoon Face Masks ",
+                    "productCount": "3+",
+                    "dataFile": "constants/products/Mugs & Cups/Cartoon/products.json"
+                },
+                {
+                    "id": "sub-cotton",
+                    "name": "Cotton",
+                    "image": "https://picsum.photos/seed/sub-cotton1/400/400",
+                    "description": "Cotton Face Masks ",
+                    "productCount": "6+",
+                    "dataFile": "constants/products/Tote Bags/Cotton/products.json"
+                },
+                {
+                    "id": "sub-couple",
+                    "name": "Couple",
+                    "image": "https://picsum.photos/seed/sub-couple1/400/400",
+                    "description": "Couple Face Masks ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Face Masks/Couple/products.json"
+                },
+                {
+                    "id": "sub-custom",
+                    "name": "Custom",
+                    "image": "https://picsum.photos/seed/sub-custom1/400/400",
+                    "description": "Custom Face Masks ",
+                    "productCount": "6+",
+                    "dataFile": "constants/products/Tote Bags/Custom/products.json"
+                },
+                {
+                    "id": "sub-designer",
+                    "name": "Designer",
+                    "image": "https://picsum.photos/seed/sub-designer1/400/400",
+                    "description": "Designer Face Masks ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Face Masks/Designer/products.json"
+                },
+                {
+                    "id": "sub-disposable",
+                    "name": "Disposable",
+                    "image": "https://picsum.photos/seed/sub-disposable1/400/400",
+                    "description": "Disposable Face Masks ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Face Masks/Disposable/products.json"
+                },
+                {
+                    "id": "sub-festival",
+                    "name": "Festival",
+                    "image": "https://picsum.photos/seed/sub-festival1/400/400",
+                    "description": "Festival Face Masks ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Face Masks/Festival/products.json"
+                },
+                {
+                    "id": "sub-filter",
+                    "name": "Filter",
+                    "image": "https://picsum.photos/seed/sub-filter1/400/400",
+                    "description": "Filter Face Masks ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Face Masks/Filter/products.json"
+                },
+                {
+                    "id": "sub-kids",
+                    "name": "Kids",
+                    "image": "https://picsum.photos/seed/sub-kids1/400/400",
+                    "description": "Kids Face Masks ",
+                    "productCount": "1+",
+                    "dataFile": "constants/products/Photo Frames/Kids/products.json"
+                },
+                {
+                    "id": "sub-layered",
+                    "name": "Layered",
+                    "image": "https://picsum.photos/seed/sub-layered1/400/400",
+                    "description": "Layered Face Masks ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Face Masks/Layered/products.json"
+                },
+                {
+                    "id": "sub-logo",
+                    "name": "Logo",
+                    "image": "https://picsum.photos/seed/sub-logo1/400/400",
+                    "description": "Logo Face Masks ",
+                    "productCount": "3+",
+                    "dataFile": "constants/products/Face Masks/Logo/products.json"
+                },
+                {
+                    "id": "sub-n95style",
+                    "name": "N95 Style",
+                    "image": "https://picsum.photos/seed/sub-n95style1/400/400",
+                    "description": "N95 Style Face Masks ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Face Masks/N95 Style/products.json"
+                },
+                {
+                    "id": "sub-plain",
+                    "name": "Plain",
+                    "image": "https://picsum.photos/seed/sub-plain1/400/400",
+                    "description": "Plain Face Masks ",
+                    "productCount": "18+",
+                    "dataFile": "constants/products/Tote Bags/Plain/products.json"
+                },
+                {
+                    "id": "sub-printed",
+                    "name": "Printed",
+                    "image": "https://picsum.photos/seed/sub-printed1/400/400",
+                    "description": "Printed Face Masks ",
+                    "productCount": "153+",
+                    "dataFile": "constants/products/Tote Bags/Printed/products.json"
+                },
+                {
+                    "id": "sub-reusable",
+                    "name": "Reusable",
+                    "image": "https://picsum.photos/seed/sub-reusable1/400/400",
+                    "description": "Reusable Face Masks ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Face Masks/Reusable/products.json"
+                },
+                {
+                    "id": "sub-silk",
+                    "name": "Silk",
+                    "image": "https://picsum.photos/seed/sub-silk1/400/400",
+                    "description": "Silk Face Masks ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Face Masks/Silk/products.json"
+                },
+                {
+                    "id": "sub-sports",
+                    "name": "Sports",
+                    "image": "https://picsum.photos/seed/sub-sports1/400/400",
+                    "description": "Sports Face Masks ",
+                    "productCount": "5+",
+                    "dataFile": "constants/products/Hoodies/Women Clothing/Sports/products.json"
+                },
+                {
+                    "id": "sub-transparent",
+                    "name": "Transparent",
+                    "image": "https://picsum.photos/seed/sub-transparent1/400/400",
+                    "description": "Transparent Face Masks ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Face Masks/Transparent/products.json"
+                }
+            ]
+        },
+        {
+            "id": "cat-footwear",
+            "name": "Footwear",
+            "subcategories": [
+                {
+                    "id": "sub-flipflops",
+                    "name": "Flip Flops",
+                    "image": "https://picsum.photos/seed/sub-flipflops1/400/400",
+                    "description": "Flip Flops Footwear ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Footwear/Flip Flops/products.json"
+                },
+                {
+                    "id": "sub-menclothing",
+                    "name": "Men Clothing",
+                    "image": "https://picsum.photos/seed/sub-menclothing1/400/400",
+                    "description": "Men Clothing Footwear ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Footwear/Men Clothing/products.json"
+                },
+                {
+                    "id": "sub-slides",
+                    "name": "Slides",
+                    "image": "https://picsum.photos/seed/sub-slides1/400/400",
+                    "description": "Slides Footwear ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Footwear/Slides/products.json"
+                },
+                {
+                    "id": "sub-womenclothing",
+                    "name": "Women Clothing",
+                    "image": "https://picsum.photos/seed/sub-womenclothing1/400/400",
+                    "description": "Women Clothing Footwear ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Footwear/Women Clothing/products.json"
+                }
+            ]
+        },
+        {
+            "id": "cat-hoodies",
+            "name": "Hoodies",
+            "sections": [
+                {
+                    "name": "Men Clothing",
+                    "subcategories": [
+                        {
+                            "id": "sub-menclothing-colorblock",
+                            "name": "Color Block",
+                            "image": "https://picsum.photos/seed/sub-menclothing-colorblock1/400/400",
+                            "description": "Color Block Hoodies for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Men Clothing/Color Block/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-crop",
+                            "name": "Crop",
+                            "image": "https://picsum.photos/seed/sub-menclothing-crop1/400/400",
+                            "description": "Crop Hoodies for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Men Clothing/Crop/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-custom",
+                            "name": "Custom",
+                            "image": "https://picsum.photos/seed/sub-menclothing-custom1/400/400",
+                            "description": "Custom Hoodies for Men Clothing",
+                            "productCount": "6+",
+                            "dataFile": "constants/products/Tote Bags/Custom/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-distressed",
+                            "name": "Distressed",
+                            "image": "https://picsum.photos/seed/sub-menclothing-distressed1/400/400",
+                            "description": "Distressed Hoodies for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Men Clothing/Distressed/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-embroidered",
+                            "name": "Embroidered",
+                            "image": "https://picsum.photos/seed/sub-menclothing-embroidered1/400/400",
+                            "description": "Embroidered Hoodies for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Men Clothing/Embroidered/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-fleece",
+                            "name": "Fleece",
+                            "image": "https://picsum.photos/seed/sub-menclothing-fleece1/400/400",
+                            "description": "Fleece Hoodies for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Men Clothing/Fleece/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-graphic",
+                            "name": "Graphic",
+                            "image": "https://picsum.photos/seed/sub-menclothing-graphic1/400/400",
+                            "description": "Graphic Hoodies for Men Clothing",
+                            "productCount": "10+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/Graphic/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-heavyweight",
+                            "name": "Heavyweight",
+                            "image": "https://picsum.photos/seed/sub-menclothing-heavyweight1/400/400",
+                            "description": "Heavyweight Hoodies for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Men Clothing/Heavyweight/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-lightweight",
+                            "name": "Lightweight",
+                            "image": "https://picsum.photos/seed/sub-menclothing-lightweight1/400/400",
+                            "description": "Lightweight Hoodies for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Men Clothing/Lightweight/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-longline",
+                            "name": "Longline",
+                            "image": "https://picsum.photos/seed/sub-menclothing-longline1/400/400",
+                            "description": "Longline Hoodies for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Men Clothing/Longline/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-oversized",
+                            "name": "Oversized",
+                            "image": "https://picsum.photos/seed/sub-menclothing-oversized1/400/400",
+                            "description": "Oversized Hoodies for Men Clothing",
+                            "productCount": "169+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/Oversized/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-plain",
+                            "name": "Plain",
+                            "image": "https://picsum.photos/seed/sub-menclothing-plain1/400/400",
+                            "description": "Plain Hoodies for Men Clothing",
+                            "productCount": "18+",
+                            "dataFile": "constants/products/Tote Bags/Plain/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-printed",
+                            "name": "Printed",
+                            "image": "https://picsum.photos/seed/sub-menclothing-printed1/400/400",
+                            "description": "Printed Hoodies for Men Clothing",
+                            "productCount": "153+",
+                            "dataFile": "constants/products/Tote Bags/Printed/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-pullover",
+                            "name": "Pullover",
+                            "image": "https://picsum.photos/seed/sub-menclothing-pullover1/400/400",
+                            "description": "Pullover Hoodies for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Men Clothing/Pullover/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-sherpa",
+                            "name": "Sherpa",
+                            "image": "https://picsum.photos/seed/sub-menclothing-sherpa1/400/400",
+                            "description": "Sherpa Hoodies for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Men Clothing/Sherpa/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-sleeveless",
+                            "name": "Sleeveless",
+                            "image": "https://picsum.photos/seed/sub-menclothing-sleeveless1/400/400",
+                            "description": "Sleeveless Hoodies for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Men Clothing/Sleeveless/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-slimfit",
+                            "name": "Slim Fit",
+                            "image": "https://picsum.photos/seed/sub-menclothing-slimfit1/400/400",
+                            "description": "Slim Fit Hoodies for Men Clothing",
+                            "productCount": "10+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Slim Fit/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-sports",
+                            "name": "Sports",
+                            "image": "https://picsum.photos/seed/sub-menclothing-sports1/400/400",
+                            "description": "Sports Hoodies for Men Clothing",
+                            "productCount": "5+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Sports/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-streetwear",
+                            "name": "Streetwear",
+                            "image": "https://picsum.photos/seed/sub-menclothing-streetwear1/400/400",
+                            "description": "Streetwear Hoodies for Men Clothing",
+                            "productCount": "1+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Streetwear/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-techwear",
+                            "name": "Techwear",
+                            "image": "https://picsum.photos/seed/sub-menclothing-techwear1/400/400",
+                            "description": "Techwear Hoodies for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Men Clothing/Techwear/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-washed",
+                            "name": "Washed",
+                            "image": "https://picsum.photos/seed/sub-menclothing-washed1/400/400",
+                            "description": "Washed Hoodies for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Men Clothing/Washed/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-wintercollection",
+                            "name": "Winter Collection",
+                            "image": "https://picsum.photos/seed/sub-menclothing-wintercollection1/400/400",
+                            "description": "Winter Collection Hoodies for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Men Clothing/Winter Collection/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-zipup",
+                            "name": "Zip-Up",
+                            "image": "https://picsum.photos/seed/sub-menclothing-zipup1/400/400",
+                            "description": "Zip-Up Hoodies for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Men Clothing/Zip-Up/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-zipper",
+                            "name": "Zipper",
+                            "image": "https://picsum.photos/seed/sub-menclothing-zipper1/400/400",
+                            "description": "Zipper Hoodies for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Men Clothing/Zipper/products.json"
+                        }
+                    ]
+                },
+                {
+                    "name": "Women Clothing",
+                    "subcategories": [
+                        {
+                            "id": "sub-womenclothing-colorblock",
+                            "name": "Color Block",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-colorblock1/400/400",
+                            "description": "Color Block Hoodies for Women Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Color Block/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-crop",
+                            "name": "Crop",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-crop1/400/400",
+                            "description": "Crop Hoodies for Women Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Crop/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-custom",
+                            "name": "Custom",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-custom1/400/400",
+                            "description": "Custom Hoodies for Women Clothing",
+                            "productCount": "6+",
+                            "dataFile": "constants/products/Tote Bags/Custom/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-distressed",
+                            "name": "Distressed",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-distressed1/400/400",
+                            "description": "Distressed Hoodies for Women Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Distressed/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-embroidered",
+                            "name": "Embroidered",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-embroidered1/400/400",
+                            "description": "Embroidered Hoodies for Women Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Embroidered/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-fleece",
+                            "name": "Fleece",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-fleece1/400/400",
+                            "description": "Fleece Hoodies for Women Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Fleece/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-graphic",
+                            "name": "Graphic",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-graphic1/400/400",
+                            "description": "Graphic Hoodies for Women Clothing",
+                            "productCount": "10+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/Graphic/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-heavyweight",
+                            "name": "Heavyweight",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-heavyweight1/400/400",
+                            "description": "Heavyweight Hoodies for Women Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Heavyweight/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-lightweight",
+                            "name": "Lightweight",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-lightweight1/400/400",
+                            "description": "Lightweight Hoodies for Women Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Lightweight/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-longline",
+                            "name": "Longline",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-longline1/400/400",
+                            "description": "Longline Hoodies for Women Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Longline/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-oversized",
+                            "name": "Oversized",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-oversized1/400/400",
+                            "description": "Oversized Hoodies for Women Clothing",
+                            "productCount": "169+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/Oversized/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-plain",
+                            "name": "Plain",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-plain1/400/400",
+                            "description": "Plain Hoodies for Women Clothing",
+                            "productCount": "18+",
+                            "dataFile": "constants/products/Tote Bags/Plain/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-printed",
+                            "name": "Printed",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-printed1/400/400",
+                            "description": "Printed Hoodies for Women Clothing",
+                            "productCount": "153+",
+                            "dataFile": "constants/products/Tote Bags/Printed/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-pullover",
+                            "name": "Pullover",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-pullover1/400/400",
+                            "description": "Pullover Hoodies for Women Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Pullover/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-sherpa",
+                            "name": "Sherpa",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-sherpa1/400/400",
+                            "description": "Sherpa Hoodies for Women Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Sherpa/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-sleeveless",
+                            "name": "Sleeveless",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-sleeveless1/400/400",
+                            "description": "Sleeveless Hoodies for Women Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Sleeveless/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-slimfit",
+                            "name": "Slim Fit",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-slimfit1/400/400",
+                            "description": "Slim Fit Hoodies for Women Clothing",
+                            "productCount": "10+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Slim Fit/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-sports",
+                            "name": "Sports",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-sports1/400/400",
+                            "description": "Sports Hoodies for Women Clothing",
+                            "productCount": "5+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Sports/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-streetwear",
+                            "name": "Streetwear",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-streetwear1/400/400",
+                            "description": "Streetwear Hoodies for Women Clothing",
+                            "productCount": "1+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Streetwear/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-techwear",
+                            "name": "Techwear",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-techwear1/400/400",
+                            "description": "Techwear Hoodies for Women Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Techwear/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-washed",
+                            "name": "Washed",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-washed1/400/400",
+                            "description": "Washed Hoodies for Women Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Washed/products.json"
+                        },
+                        {
+                            "id": "sub-womenclothing-zipup",
+                            "name": "Zip-Up",
+                            "image": "https://picsum.photos/seed/sub-womenclothing-zipup1/400/400",
+                            "description": "Zip-Up Hoodies for Women Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/Hoodies/Women Clothing/Zip-Up/products.json"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "cat-jewelry",
+            "name": "Jewelry",
+            "subcategories": [
+                {
+                    "id": "sub-bracelets",
+                    "name": "Bracelets",
+                    "image": "https://picsum.photos/seed/sub-bracelets1/400/400",
+                    "description": "Bracelets Jewelry ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Jewelry/Bracelets/products.json"
+                },
+                {
+                    "id": "sub-necklaces",
+                    "name": "Necklaces",
+                    "image": "https://picsum.photos/seed/sub-necklaces1/400/400",
+                    "description": "Necklaces Jewelry ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Jewelry/Necklaces/products.json"
+                }
+            ]
+        },
+        {
+            "id": "cat-keychains",
+            "name": "Key Chains",
+            "subcategories": [
+                {
+                    "id": "sub-acrylic",
+                    "name": "Acrylic",
+                    "image": "https://picsum.photos/seed/sub-acrylic1/400/400",
+                    "description": "Acrylic Key Chains ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Key Chains/Acrylic/products.json"
+                },
+                {
+                    "id": "sub-beaded",
+                    "name": "Beaded",
+                    "image": "https://picsum.photos/seed/sub-beaded1/400/400",
+                    "description": "Beaded Key Chains ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Key Chains/Beaded/products.json"
+                },
+                {
+                    "id": "sub-bottleopener",
+                    "name": "Bottle Opener",
+                    "image": "https://picsum.photos/seed/sub-bottleopener1/400/400",
+                    "description": "Bottle Opener Key Chains ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Key Chains/Bottle Opener/products.json"
+                },
+                {
+                    "id": "sub-carlogo",
+                    "name": "Car Logo",
+                    "image": "https://picsum.photos/seed/sub-carlogo1/400/400",
+                    "description": "Car Logo Key Chains ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Key Chains/Car Logo/products.json"
+                },
+                {
+                    "id": "sub-cartoon",
+                    "name": "Cartoon",
+                    "image": "https://picsum.photos/seed/sub-cartoon1/400/400",
+                    "description": "Cartoon Key Chains ",
+                    "productCount": "3+",
+                    "dataFile": "constants/products/Mugs & Cups/Cartoon/products.json"
+                },
+                {
+                    "id": "sub-couple",
+                    "name": "Couple",
+                    "image": "https://picsum.photos/seed/sub-couple1/400/400",
+                    "description": "Couple Key Chains ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Key Chains/Couple/products.json"
+                },
+                {
+                    "id": "sub-glow",
+                    "name": "Glow",
+                    "image": "https://picsum.photos/seed/sub-glow1/400/400",
+                    "description": "Glow Key Chains ",
+                    "productCount": "6+",
+                    "dataFile": "constants/products/Key Chains/Glow/products.json"
+                },
+                {
+                    "id": "sub-handmade",
+                    "name": "Handmade",
+                    "image": "https://picsum.photos/seed/sub-handmade1/400/400",
+                    "description": "Handmade Key Chains ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Key Chains/Handmade/products.json"
+                },
+                {
+                    "id": "sub-leather",
+                    "name": "Leather",
+                    "image": "https://picsum.photos/seed/sub-leather1/400/400",
+                    "description": "Leather Key Chains ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Key Chains/Leather/products.json"
+                },
+                {
+                    "id": "sub-led",
+                    "name": "LED",
+                    "image": "https://picsum.photos/seed/sub-led1/400/400",
+                    "description": "LED Key Chains ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Key Chains/LED/products.json"
+                },
+                {
+                    "id": "sub-metal",
+                    "name": "Metal",
+                    "image": "https://picsum.photos/seed/sub-metal1/400/400",
+                    "description": "Metal Key Chains ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Key Chains/Metal/products.json"
+                },
+                {
+                    "id": "sub-minimalist",
+                    "name": "Minimalist",
+                    "image": "https://picsum.photos/seed/sub-minimalist1/400/400",
+                    "description": "Minimalist Key Chains ",
+                    "productCount": "2+",
+                    "dataFile": "constants/products/Photo Frames/Minimalist/products.json"
+                },
+                {
+                    "id": "sub-multitool",
+                    "name": "Multi-tool",
+                    "image": "https://picsum.photos/seed/sub-multitool1/400/400",
+                    "description": "Multi-tool Key Chains ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Key Chains/Multi-tool/products.json"
+                },
+                {
+                    "id": "sub-name",
+                    "name": "Name",
+                    "image": "https://picsum.photos/seed/sub-name1/400/400",
+                    "description": "Name Key Chains ",
+                    "productCount": "51+",
+                    "dataFile": "constants/products/Key Chains/Name/products.json"
+                },
+                {
+                    "id": "sub-photo",
+                    "name": "Photo",
+                    "image": "https://picsum.photos/seed/sub-photo1/400/400",
+                    "description": "Photo Key Chains ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Key Chains/Photo/products.json"
+                },
+                {
+                    "id": "sub-resin",
+                    "name": "Resin",
+                    "image": "https://picsum.photos/seed/sub-resin1/400/400",
+                    "description": "Resin Key Chains ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Key Chains/Resin/products.json"
+                },
+                {
+                    "id": "sub-rotating",
+                    "name": "Rotating",
+                    "image": "https://picsum.photos/seed/sub-rotating1/400/400",
+                    "description": "Rotating Key Chains ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Key Chains/Rotating/products.json"
+                },
+                {
+                    "id": "sub-rubber",
+                    "name": "Rubber",
+                    "image": "https://picsum.photos/seed/sub-rubber1/400/400",
+                    "description": "Rubber Key Chains ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Key Chains/Rubber/products.json"
+                },
+                {
+                    "id": "sub-smart",
+                    "name": "Smart",
+                    "image": "https://picsum.photos/seed/sub-smart1/400/400",
+                    "description": "Smart Key Chains ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Key Chains/Smart/products.json"
+                },
+                {
+                    "id": "sub-wooden",
+                    "name": "Wooden",
+                    "image": "https://picsum.photos/seed/sub-wooden1/400/400",
+                    "description": "Wooden Key Chains ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Key Chains/Wooden/products.json"
+                }
+            ]
+        },
+        {
+            "id": "cat-kidsclothing",
+            "name": "Kids Clothing",
+            "subcategories": [
+                {
+                    "id": "sub-onesies",
+                    "name": "Onesies",
+                    "image": "https://picsum.photos/seed/sub-onesies1/400/400",
+                    "description": "Onesies Kids Clothing ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Kids Clothing/Onesies/products.json"
+                },
+                {
+                    "id": "sub-tees",
+                    "name": "Tees",
+                    "image": "https://picsum.photos/seed/sub-tees1/400/400",
+                    "description": "Tees Kids Clothing ",
+                    "productCount": "3+",
+                    "dataFile": "constants/products/Kids Clothing/Tees/products.json"
+                }
+            ]
+        },
+        {
+            "id": "cat-mugs&cups",
+            "name": "Mugs & Cups",
+            "subcategories": [
+                {
+                    "id": "sub-beer",
+                    "name": "Beer",
+                    "image": "https://picsum.photos/seed/sub-beer1/400/400",
+                    "description": "Beer Mugs & Cups ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Mugs & Cups/Beer/products.json"
+                },
+                {
+                    "id": "sub-cartoon",
+                    "name": "Cartoon",
+                    "image": "https://picsum.photos/seed/sub-cartoon1/400/400",
+                    "description": "Cartoon Mugs & Cups ",
+                    "productCount": "3+",
+                    "dataFile": "constants/products/Mugs & Cups/Cartoon/products.json"
+                },
+                {
+                    "id": "sub-ceramic",
+                    "name": "Ceramic",
+                    "image": "https://picsum.photos/seed/sub-ceramic1/400/400",
+                    "description": "Ceramic Mugs & Cups ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Mugs & Cups/Ceramic/products.json"
+                },
+                {
+                    "id": "sub-coffee",
+                    "name": "Coffee",
+                    "image": "https://picsum.photos/seed/sub-coffee1/400/400",
+                    "description": "Coffee Mugs & Cups ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Mugs & Cups/Coffee/products.json"
+                },
+                {
+                    "id": "sub-couple",
+                    "name": "Couple",
+                    "image": "https://picsum.photos/seed/sub-couple1/400/400",
+                    "description": "Couple Mugs & Cups ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Mugs & Cups/Couple/products.json"
+                },
+                {
+                    "id": "sub-custom",
+                    "name": "Custom",
+                    "image": "https://picsum.photos/seed/sub-custom1/400/400",
+                    "description": "Custom Mugs & Cups ",
+                    "productCount": "6+",
+                    "dataFile": "constants/products/Tote Bags/Custom/products.json"
+                },
+                {
+                    "id": "sub-designer",
+                    "name": "Designer",
+                    "image": "https://picsum.photos/seed/sub-designer1/400/400",
+                    "description": "Designer Mugs & Cups ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Mugs & Cups/Designer/products.json"
+                },
+                {
+                    "id": "sub-doublewall",
+                    "name": "Double Wall",
+                    "image": "https://picsum.photos/seed/sub-doublewall1/400/400",
+                    "description": "Double Wall Mugs & Cups ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Mugs & Cups/Double Wall/products.json"
+                },
+                {
+                    "id": "sub-ecofriendly",
+                    "name": "Eco-Friendly",
+                    "image": "https://picsum.photos/seed/sub-ecofriendly1/400/400",
+                    "description": "Eco-Friendly Mugs & Cups ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Mugs & Cups/Eco-Friendly/products.json"
+                },
+                {
+                    "id": "sub-espresso",
+                    "name": "Espresso",
+                    "image": "https://picsum.photos/seed/sub-espresso1/400/400",
+                    "description": "Espresso Mugs & Cups ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Mugs & Cups/Espresso/products.json"
+                },
+                {
+                    "id": "sub-glass",
+                    "name": "Glass",
+                    "image": "https://picsum.photos/seed/sub-glass1/400/400",
+                    "description": "Glass Mugs & Cups ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Mugs & Cups/Glass/products.json"
+                },
+                {
+                    "id": "sub-glossy",
+                    "name": "Glossy",
+                    "image": "https://picsum.photos/seed/sub-glossy1/400/400",
+                    "description": "Glossy Mugs & Cups ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Mugs & Cups/Glossy/products.json"
+                },
+                {
+                    "id": "sub-handmade",
+                    "name": "Handmade",
+                    "image": "https://picsum.photos/seed/sub-handmade1/400/400",
+                    "description": "Handmade Mugs & Cups ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Mugs & Cups/Handmade/products.json"
+                },
+                {
+                    "id": "sub-insulated",
+                    "name": "Insulated",
+                    "image": "https://picsum.photos/seed/sub-insulated1/400/400",
+                    "description": "Insulated Mugs & Cups ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Mugs & Cups/Insulated/products.json"
+                },
+                {
+                    "id": "sub-magicheatsensitive",
+                    "name": "Magic (Heat Sensitive)",
+                    "image": "https://picsum.photos/seed/sub-magicheatsensitive1/400/400",
+                    "description": "Magic (Heat Sensitive) Mugs & Cups ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Mugs & Cups/Magic (Heat Sensitive)/products.json"
+                },
+                {
+                    "id": "sub-mattefinish",
+                    "name": "Matte Finish",
+                    "image": "https://picsum.photos/seed/sub-mattefinish1/400/400",
+                    "description": "Matte Finish Mugs & Cups ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Mugs & Cups/Matte Finish/products.json"
+                },
+                {
+                    "id": "sub-minimalist",
+                    "name": "Minimalist",
+                    "image": "https://picsum.photos/seed/sub-minimalist1/400/400",
+                    "description": "Minimalist Mugs & Cups ",
+                    "productCount": "2+",
+                    "dataFile": "constants/products/Photo Frames/Minimalist/products.json"
+                },
+                {
+                    "id": "sub-office",
+                    "name": "Office",
+                    "image": "https://picsum.photos/seed/sub-office1/400/400",
+                    "description": "Office Mugs & Cups ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Mugs & Cups/Office/products.json"
+                },
+                {
+                    "id": "sub-photo",
+                    "name": "Photo",
+                    "image": "https://picsum.photos/seed/sub-photo1/400/400",
+                    "description": "Photo Mugs & Cups ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Mugs & Cups/Photo/products.json"
+                },
+                {
+                    "id": "sub-printed",
+                    "name": "Printed",
+                    "image": "https://picsum.photos/seed/sub-printed1/400/400",
+                    "description": "Printed Mugs & Cups ",
+                    "productCount": "153+",
+                    "dataFile": "constants/products/Tote Bags/Printed/products.json"
+                },
+                {
+                    "id": "sub-stainlesssteel",
+                    "name": "Stainless Steel",
+                    "image": "https://picsum.photos/seed/sub-stainlesssteel1/400/400",
+                    "description": "Stainless Steel Mugs & Cups ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Mugs & Cups/Stainless Steel/products.json"
+                },
+                {
+                    "id": "sub-tea",
+                    "name": "Tea",
+                    "image": "https://picsum.photos/seed/sub-tea1/400/400",
+                    "description": "Tea Mugs & Cups ",
+                    "productCount": "6+",
+                    "dataFile": "constants/products/Mugs & Cups/Tea/products.json"
+                },
+                {
+                    "id": "sub-travel",
+                    "name": "Travel",
+                    "image": "https://picsum.photos/seed/sub-travel1/400/400",
+                    "description": "Travel Mugs & Cups ",
+                    "productCount": "2+",
+                    "dataFile": "constants/products/Mugs & Cups/Travel/products.json"
+                }
+            ]
+        },
+        {
+            "id": "cat-pendants",
+            "name": "Pendants",
+            "subcategories": [
+                {
+                    "id": "sub-alphabet",
+                    "name": "Alphabet",
+                    "image": "https://picsum.photos/seed/sub-alphabet1/400/400",
+                    "description": "Alphabet Pendants ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Pendants/Alphabet/products.json"
+                },
+                {
+                    "id": "sub-artificial",
+                    "name": "Artificial",
+                    "image": "https://picsum.photos/seed/sub-artificial1/400/400",
+                    "description": "Artificial Pendants ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Pendants/Artificial/products.json"
+                },
+                {
+                    "id": "sub-birthstone",
+                    "name": "Birthstone",
+                    "image": "https://picsum.photos/seed/sub-birthstone1/400/400",
+                    "description": "Birthstone Pendants ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Pendants/Birthstone/products.json"
+                },
+                {
+                    "id": "sub-bohemian",
+                    "name": "Bohemian",
+                    "image": "https://picsum.photos/seed/sub-bohemian1/400/400",
+                    "description": "Bohemian Pendants ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Pendants/Bohemian/products.json"
+                },
+                {
+                    "id": "sub-charm",
+                    "name": "Charm",
+                    "image": "https://picsum.photos/seed/sub-charm1/400/400",
+                    "description": "Charm Pendants ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Pendants/Charm/products.json"
+                },
+                {
+                    "id": "sub-couple",
+                    "name": "Couple",
+                    "image": "https://picsum.photos/seed/sub-couple1/400/400",
+                    "description": "Couple Pendants ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Pendants/Couple/products.json"
+                },
+                {
+                    "id": "sub-diamond",
+                    "name": "Diamond",
+                    "image": "https://picsum.photos/seed/sub-diamond1/400/400",
+                    "description": "Diamond Pendants ",
+                    "productCount": "1+",
+                    "dataFile": "constants/products/Pendants/Diamond/products.json"
+                },
+                {
+                    "id": "sub-engraved",
+                    "name": "Engraved",
+                    "image": "https://picsum.photos/seed/sub-engraved1/400/400",
+                    "description": "Engraved Pendants ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Pendants/Engraved/products.json"
+                },
+                {
+                    "id": "sub-gemstone",
+                    "name": "Gemstone",
+                    "image": "https://picsum.photos/seed/sub-gemstone1/400/400",
+                    "description": "Gemstone Pendants ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Pendants/Gemstone/products.json"
+                },
+                {
+                    "id": "sub-gold",
+                    "name": "Gold",
+                    "image": "https://picsum.photos/seed/sub-gold1/400/400",
+                    "description": "Gold Pendants ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Pendants/Gold/products.json"
+                },
+                {
+                    "id": "sub-handmade",
+                    "name": "Handmade",
+                    "image": "https://picsum.photos/seed/sub-handmade1/400/400",
+                    "description": "Handmade Pendants ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Pendants/Handmade/products.json"
+                },
+                {
+                    "id": "sub-heart",
+                    "name": "Heart",
+                    "image": "https://picsum.photos/seed/sub-heart1/400/400",
+                    "description": "Heart Pendants ",
+                    "productCount": "2+",
+                    "dataFile": "constants/products/Pendants/Heart/products.json"
+                },
+                {
+                    "id": "sub-layered",
+                    "name": "Layered",
+                    "image": "https://picsum.photos/seed/sub-layered1/400/400",
+                    "description": "Layered Pendants ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Pendants/Layered/products.json"
+                },
+                {
+                    "id": "sub-lockets",
+                    "name": "Lockets",
+                    "image": "https://picsum.photos/seed/sub-lockets1/400/400",
+                    "description": "Lockets Pendants ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Pendants/Lockets/products.json"
+                },
+                {
+                    "id": "sub-minimalist",
+                    "name": "Minimalist",
+                    "image": "https://picsum.photos/seed/sub-minimalist1/400/400",
+                    "description": "Minimalist Pendants ",
+                    "productCount": "2+",
+                    "dataFile": "constants/products/Photo Frames/Minimalist/products.json"
+                },
+                {
+                    "id": "sub-religious",
+                    "name": "Religious",
+                    "image": "https://picsum.photos/seed/sub-religious1/400/400",
+                    "description": "Religious Pendants ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Pendants/Religious/products.json"
+                },
+                {
+                    "id": "sub-resin",
+                    "name": "Resin",
+                    "image": "https://picsum.photos/seed/sub-resin1/400/400",
+                    "description": "Resin Pendants ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Pendants/Resin/products.json"
+                },
+                {
+                    "id": "sub-silver",
+                    "name": "Silver",
+                    "image": "https://picsum.photos/seed/sub-silver1/400/400",
+                    "description": "Silver Pendants ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Pendants/Silver/products.json"
+                },
+                {
+                    "id": "sub-statement",
+                    "name": "Statement",
+                    "image": "https://picsum.photos/seed/sub-statement1/400/400",
+                    "description": "Statement Pendants ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Pendants/Statement/products.json"
+                },
+                {
+                    "id": "sub-vintage",
+                    "name": "Vintage",
+                    "image": "https://picsum.photos/seed/sub-vintage1/400/400",
+                    "description": "Vintage Pendants ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Pendants/Vintage/products.json"
+                }
+            ]
+        },
+        {
+            "id": "cat-phonecases",
+            "name": "Phone Cases",
+            "subcategories": [
+                {
+                    "id": "sub-3d",
+                    "name": "3D",
+                    "image": "https://picsum.photos/seed/sub-3d1/400/400",
+                    "description": "3D Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/3D/products.json"
+                },
+                {
+                    "id": "sub-cooling",
+                    "name": "Cooling",
+                    "image": "https://picsum.photos/seed/sub-cooling1/400/400",
+                    "description": "Cooling Phone Cases ",
+                    "productCount": "6+",
+                    "dataFile": "constants/products/Phone Cases/Cooling/products.json"
+                },
+                {
+                    "id": "sub-custom",
+                    "name": "Custom",
+                    "image": "https://picsum.photos/seed/sub-custom1/400/400",
+                    "description": "Custom Phone Cases ",
+                    "productCount": "6+",
+                    "dataFile": "constants/products/Tote Bags/Custom/products.json"
+                },
+                {
+                    "id": "sub-flip",
+                    "name": "Flip",
+                    "image": "https://picsum.photos/seed/sub-flip1/400/400",
+                    "description": "Flip Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/Flip/products.json"
+                },
+                {
+                    "id": "sub-glasscase",
+                    "name": "Glass Case",
+                    "image": "https://picsum.photos/seed/sub-glasscase1/400/400",
+                    "description": "Glass Case Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/Glass Case/products.json"
+                },
+                {
+                    "id": "sub-glossy",
+                    "name": "Glossy",
+                    "image": "https://picsum.photos/seed/sub-glossy1/400/400",
+                    "description": "Glossy Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/Glossy/products.json"
+                },
+                {
+                    "id": "sub-hard",
+                    "name": "Hard",
+                    "image": "https://picsum.photos/seed/sub-hard1/400/400",
+                    "description": "Hard Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/Hard/products.json"
+                },
+                {
+                    "id": "sub-hardcase",
+                    "name": "Hard Case",
+                    "image": "https://picsum.photos/seed/sub-hardcase1/400/400",
+                    "description": "Hard Case Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/Hard Case/products.json"
+                },
+                {
+                    "id": "sub-kickstand",
+                    "name": "Kickstand",
+                    "image": "https://picsum.photos/seed/sub-kickstand1/400/400",
+                    "description": "Kickstand Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/Kickstand/products.json"
+                },
+                {
+                    "id": "sub-leather",
+                    "name": "Leather",
+                    "image": "https://picsum.photos/seed/sub-leather1/400/400",
+                    "description": "Leather Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/Leather/products.json"
+                },
+                {
+                    "id": "sub-magnetic",
+                    "name": "Magnetic",
+                    "image": "https://picsum.photos/seed/sub-magnetic1/400/400",
+                    "description": "Magnetic Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/Magnetic/products.json"
+                },
+                {
+                    "id": "sub-magsafe",
+                    "name": "Magsafe",
+                    "image": "https://picsum.photos/seed/sub-magsafe1/400/400",
+                    "description": "Magsafe Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/Magsafe/products.json"
+                },
+                {
+                    "id": "sub-matte",
+                    "name": "Matte",
+                    "image": "https://picsum.photos/seed/sub-matte1/400/400",
+                    "description": "Matte Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/Matte/products.json"
+                },
+                {
+                    "id": "sub-printed",
+                    "name": "Printed",
+                    "image": "https://picsum.photos/seed/sub-printed1/400/400",
+                    "description": "Printed Phone Cases ",
+                    "productCount": "153+",
+                    "dataFile": "constants/products/Tote Bags/Printed/products.json"
+                },
+                {
+                    "id": "sub-ringholder",
+                    "name": "Ring Holder",
+                    "image": "https://picsum.photos/seed/sub-ringholder1/400/400",
+                    "description": "Ring Holder Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/Ring Holder/products.json"
+                },
+                {
+                    "id": "sub-rugged",
+                    "name": "Rugged",
+                    "image": "https://picsum.photos/seed/sub-rugged1/400/400",
+                    "description": "Rugged Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/Rugged/products.json"
+                },
+                {
+                    "id": "sub-shockproof",
+                    "name": "Shockproof",
+                    "image": "https://picsum.photos/seed/sub-shockproof1/400/400",
+                    "description": "Shockproof Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/Shockproof/products.json"
+                },
+                {
+                    "id": "sub-silicone",
+                    "name": "Silicone",
+                    "image": "https://picsum.photos/seed/sub-silicone1/400/400",
+                    "description": "Silicone Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/Silicone/products.json"
+                },
+                {
+                    "id": "sub-softcase",
+                    "name": "Soft Case",
+                    "image": "https://picsum.photos/seed/sub-softcase1/400/400",
+                    "description": "Soft Case Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/Soft Case/products.json"
+                },
+                {
+                    "id": "sub-tpu",
+                    "name": "TPU",
+                    "image": "https://picsum.photos/seed/sub-tpu1/400/400",
+                    "description": "TPU Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/TPU/products.json"
+                },
+                {
+                    "id": "sub-transparent",
+                    "name": "Transparent",
+                    "image": "https://picsum.photos/seed/sub-transparent1/400/400",
+                    "description": "Transparent Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/Transparent/products.json"
+                },
+                {
+                    "id": "sub-wallet",
+                    "name": "Wallet",
+                    "image": "https://picsum.photos/seed/sub-wallet1/400/400",
+                    "description": "Wallet Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/Wallet/products.json"
+                },
+                {
+                    "id": "sub-waterproof",
+                    "name": "Waterproof",
+                    "image": "https://picsum.photos/seed/sub-waterproof1/400/400",
+                    "description": "Waterproof Phone Cases ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Phone Cases/Waterproof/products.json"
+                }
+            ]
+        },
+        {
+            "id": "cat-photoframes",
+            "name": "Photo Frames",
+            "subcategories": [
+                {
+                    "id": "sub-acrylic",
+                    "name": "Acrylic",
+                    "image": "https://picsum.photos/seed/sub-acrylic1/400/400",
+                    "description": "Acrylic Photo Frames ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Photo Frames/Acrylic/products.json"
+                },
+                {
+                    "id": "sub-certificate",
+                    "name": "Certificate",
+                    "image": "https://picsum.photos/seed/sub-certificate1/400/400",
+                    "description": "Certificate Photo Frames ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Photo Frames/Certificate/products.json"
+                },
+                {
+                    "id": "sub-collage",
+                    "name": "Collage",
+                    "image": "https://picsum.photos/seed/sub-collage1/400/400",
+                    "description": "Collage Photo Frames ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Photo Frames/Collage/products.json"
+                },
+                {
+                    "id": "sub-couple",
+                    "name": "Couple",
+                    "image": "https://picsum.photos/seed/sub-couple1/400/400",
+                    "description": "Couple Photo Frames ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Photo Frames/Couple/products.json"
+                },
+                {
+                    "id": "sub-deskframe",
+                    "name": "Desk Frame",
+                    "image": "https://picsum.photos/seed/sub-deskframe1/400/400",
+                    "description": "Desk Frame Frames ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Frames/Desk Frame/products.json"
+                },
+                {
+                    "id": "sub-wallart",
+                    "name": "Wall Art",
+                    "image": "https://picsum.photos/seed/sub-wallart1/400/400",
+                    "description": "Wall Art Frames ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Frames/Wall Art/products.json"
+                },
+                {
+                    "id": "sub-customized",
+                    "name": "Customized",
+                    "image": "https://picsum.photos/seed/sub-customized1/400/400",
+                    "description": "Customized Photo Frames ",
+                    "productCount": "6+",
+                    "dataFile": "constants/products/Photo Frames/Customized/products.json"
+                },
+                {
+                    "id": "sub-designer",
+                    "name": "Designer",
+                    "image": "https://picsum.photos/seed/sub-designer1/400/400",
+                    "description": "Designer Photo Frames ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Photo Frames/Designer/products.json"
+                },
+                {
+                    "id": "sub-digital",
+                    "name": "Digital",
+                    "image": "https://picsum.photos/seed/sub-digital1/400/400",
+                    "description": "Digital Photo Frames ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Photo Frames/Digital/products.json"
+                },
+                {
+                    "id": "sub-floating",
+                    "name": "Floating",
+                    "image": "https://picsum.photos/seed/sub-floating1/400/400",
+                    "description": "Floating Photo Frames ",
+                    "productCount": "1+",
+                    "dataFile": "constants/products/Photo Frames/Floating/products.json"
+                },
+                {
+                    "id": "sub-glass",
+                    "name": "Glass",
+                    "image": "https://picsum.photos/seed/sub-glass1/400/400",
+                    "description": "Glass Photo Frames ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Photo Frames/Glass/products.json"
+                },
+                {
+                    "id": "sub-kids",
+                    "name": "Kids",
+                    "image": "https://picsum.photos/seed/sub-kids1/400/400",
+                    "description": "Kids Photo Frames ",
+                    "productCount": "1+",
+                    "dataFile": "constants/products/Photo Frames/Kids/products.json"
+                },
+                {
+                    "id": "sub-led",
+                    "name": "LED",
+                    "image": "https://picsum.photos/seed/sub-led1/400/400",
+                    "description": "LED Photo Frames ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Photo Frames/LED/products.json"
+                },
+                {
+                    "id": "sub-metal",
+                    "name": "Metal",
+                    "image": "https://picsum.photos/seed/sub-metal1/400/400",
+                    "description": "Metal Photo Frames ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Photo Frames/Metal/products.json"
+                },
+                {
+                    "id": "sub-minimalist",
+                    "name": "Minimalist",
+                    "image": "https://picsum.photos/seed/sub-minimalist1/400/400",
+                    "description": "Minimalist Photo Frames ",
+                    "productCount": "2+",
+                    "dataFile": "constants/products/Photo Frames/Minimalist/products.json"
+                },
+                {
+                    "id": "sub-multiphoto",
+                    "name": "Multi-Photo",
+                    "image": "https://picsum.photos/seed/sub-multiphoto1/400/400",
+                    "description": "Multi-Photo Photo Frames ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Photo Frames/Multi-Photo/products.json"
+                },
+                {
+                    "id": "sub-poster",
+                    "name": "Poster",
+                    "image": "https://picsum.photos/seed/sub-poster1/400/400",
+                    "description": "Poster Photo Frames ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Photo Frames/Poster/products.json"
+                },
+                {
+                    "id": "sub-rustic",
+                    "name": "Rustic",
+                    "image": "https://picsum.photos/seed/sub-rustic1/400/400",
+                    "description": "Rustic Photo Frames ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Photo Frames/Rustic/products.json"
+                },
+                {
+                    "id": "sub-shadowbox",
+                    "name": "Shadow Box",
+                    "image": "https://picsum.photos/seed/sub-shadowbox1/400/400",
+                    "description": "Shadow Box Photo Frames ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Photo Frames/Shadow Box/products.json"
+                },
+                {
+                    "id": "sub-tabletop",
+                    "name": "Tabletop",
+                    "image": "https://picsum.photos/seed/sub-tabletop1/400/400",
+                    "description": "Tabletop Photo Frames ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Photo Frames/Tabletop/products.json"
+                },
+                {
+                    "id": "sub-vintage",
+                    "name": "Vintage",
+                    "image": "https://picsum.photos/seed/sub-vintage1/400/400",
+                    "description": "Vintage Photo Frames ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Photo Frames/Vintage/products.json"
+                },
+                {
+                    "id": "sub-wallhanging",
+                    "name": "Wall Hanging",
+                    "image": "https://picsum.photos/seed/sub-wallhanging1/400/400",
+                    "description": "Wall Hanging Photo Frames ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Photo Frames/Wall Hanging/products.json"
+                },
+                {
+                    "id": "sub-wooden",
+                    "name": "Wooden",
+                    "image": "https://picsum.photos/seed/sub-wooden1/400/400",
+                    "description": "Wooden Photo Frames ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Photo Frames/Wooden/products.json"
+                }
+            ]
+        },
+        {
+            "id": "cat-t-shirts",
+            "name": "T-Shirts",
+            "sections": [
+                {
+                    "name": "Men Clothing",
+                    "subcategories": [
+                        {
+                            "id": "sub-menclothing-cottonpolo",
+                            "name": "Cotton Polo",
+                            "image": "https://static.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=https%3A%2F%2Fwww.yourprint.in%2Fwp-content%2Fuploads%2F2025%2F09%2Fcotton-polo.png&resizeTo=180&format=webp",
+                            "description": "Cotton Polo T-Shirts for Men Clothing",
+                            "productCount": "6+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/Cotton Polo/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-fullsleeves",
+                            "name": "Full Sleeves",
+                            "image": "https://static.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=https%3A%2F%2Fwww.yourprint.in%2Fwp-content%2Fuploads%2F2025%2F08%2FTshirt-full-sleeve.png&resizeTo=180&format=webp",
+                            "description": "Full Sleeves T-Shirts for Men Clothing",
+                            "productCount": "2+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/Full Sleeves/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-graphic",
+                            "name": "Graphic",
+                            "image": "https://static.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=https%3A%2F%2Fwww.yourprint.in%2Fwp-content%2Fuploads%2F2025%2F08%2Ftshirt-Graphic.png&resizeTo=180&format=webp",
+                            "description": "Graphic T-Shirts for Men Clothing",
+                            "productCount": "10+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/Graphic/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-halfsleeves",
+                            "name": "Half Sleeves",
+                            "image": "https://static.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=https%3A%2F%2Fwww.yourprint.in%2Fwp-content%2Fuploads%2F2025%2F08%2FTshirt-half-sleeve.png&resizeTo=180&format=webp",
+                            "description": "Half Sleeves T-Shirts for Men Clothing",
+                            "productCount": "6+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/Half Sleeves/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-henley",
+                            "name": "Henley",
+                            "image": "https://static.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=https%3A%2F%2Fwww.yourprint.in%2Fwp-content%2Fuploads%2F2026%2F02%2Fhenley-thsirt-2.png&resizeTo=180&format=webp",
+                            "description": "Henley T-Shirts for Men Clothing",
+                            "productCount": "14+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/Henley/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-holi",
+                            "name": "Holi",
+                            "image": "https://static.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=https%3A%2F%2Fwww.yourprint.in%2Fwp-content%2Fuploads%2F2025%2F08%2FTshirt-holi.png&resizeTo=180&format=webp",
+                            "description": "Holi T-Shirts for Men Clothing",
+                            "productCount": "30+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/Holi/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-oversized",
+                            "name": "Oversized",
+                            "image": "https://static.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=https%3A%2F%2Fwww.yourprint.in%2Fwp-content%2Fuploads%2F2025%2F08%2Ftshirt-oversized.png&resizeTo=180&format=webp",
+                            "description": "Oversized T-Shirts for Men Clothing",
+                            "productCount": "169+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/Oversized/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-plain",
+                            "name": "Plain",
+                            "image": "https://static.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=https%3A%2F%2Fwww.yourprint.in%2Fwp-content%2Fuploads%2F2025%2F08%2FPLain-thsirt.png&resizeTo=180&format=webp",
+                            "description": "Plain T-Shirts for Men Clothing",
+                            "productCount": "18+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/Plain/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-plussizepolo",
+                            "name": "Plus Size Polo",
+                            "image": "https://static.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=https%3A%2F%2Fwww.yourprint.in%2Fwp-content%2Fuploads%2F2025%2F09%2FPlus-size-polo.png&resizeTo=180&format=webp",
+                            "description": "Plus Size Polo T-Shirts for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/Plus Size Polo/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-polyesterdrifitpolo",
+                            "name": "Polyester & Dri-Fit Polo",
+                            "image": "https://static.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=https%3A%2F%2Fwww.yourprint.in%2Fwp-content%2Fuploads%2F2025%2F09%2FPolyester-and-di-fit.png&resizeTo=180&format=webp",
+                            "description": "Polyester & Dri-Fit Polo T-Shirts for Men Clothing",
+                            "productCount": "12+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/Polyester & Dri-Fit Polo/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-polowithpocket",
+                            "name": "Polo with Pocket",
+                            "image": "https://static.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=https%3A%2F%2Fwww.yourprint.in%2Fwp-content%2Fuploads%2F2025%2F09%2Fpocket-polo.png&resizeTo=180&format=webp",
+                            "description": "Polo with Pocket T-Shirts for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/Polo with Pocket/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-polowithtipping",
+                            "name": "Polo with Tipping",
+                            "image": "https://static.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=https%3A%2F%2Fwww.yourprint.in%2Fwp-content%2Fuploads%2F2025%2F09%2Ftipping-polo.png&resizeTo=180&format=webp",
+                            "description": "Polo with Tipping T-Shirts for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/Polo with Tipping/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-raglan",
+                            "name": "Raglan",
+                            "image": "https://static.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=https%3A%2F%2Fwww.yourprint.in%2Fwp-content%2Fuploads%2F2025%2F08%2Ftshirt-raglan.png&resizeTo=180&format=webp",
+                            "description": "Raglan T-Shirts for Men Clothing",
+                            "productCount": "7+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/Raglan/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-samedaydelivery",
+                            "name": "Same Day & Next Day Delivery",
+                            "image": "https://static.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=https%3A%2F%2Fwww.yourprint.in%2Fwp-content%2Fuploads%2F2025%2F08%2Fsame-day-delivery-tshirt.png&resizeTo=180&format=webp",
+                            "description": "Same Day & Next Day Delivery T-Shirts for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/Same Day & Next Day Delivery/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-supimacotton",
+                            "name": "Supima Cotton",
+                            "image": "https://static.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=https%3A%2F%2Fwww.yourprint.in%2Fwp-content%2Fuploads%2F2025%2F08%2FSupima-tshirt-2.png&resizeTo=180&format=webp",
+                            "description": "Supima Cotton T-Shirts for Men Clothing",
+                            "productCount": "8+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/Supima Cotton/products.json"
+                        },
+                        {
+                            "id": "sub-menclothing-vneck",
+                            "name": "V Neck",
+                            "image": "https://static.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=https%3A%2F%2Fwww.yourprint.in%2Fwp-content%2Fuploads%2F2025%2F08%2Ftshirt-v-neck.png&resizeTo=180&format=webp",
+                            "description": "V Neck T-Shirts for Men Clothing",
+                            "productCount": "159+",
+                            "dataFile": "constants/products/T-Shirts/Men Clothing/V Neck/products.json"
+                        }
+                    ]
+                },
+                {
+                    "name": "Women Clothing",
+                    "subcategories": []
+                }
+            ]
+        },
+        {
+            "id": "cat-totebags",
+            "name": "Tote Bags",
+            "subcategories": [
+                {
+                    "id": "sub-beach",
+                    "name": "Beach",
+                    "image": "https://picsum.photos/seed/sub-beach1/400/400",
+                    "description": "Beach Tote Bags ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Tote Bags/Beach/products.json"
+                },
+                {
+                    "id": "sub-canvas",
+                    "name": "Canvas",
+                    "image": "https://picsum.photos/seed/sub-canvas1/400/400",
+                    "description": "Canvas Tote Bags ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Tote Bags/Canvas/products.json"
+                },
+                {
+                    "id": "sub-cotton",
+                    "name": "Cotton",
+                    "image": "https://picsum.photos/seed/sub-cotton1/400/400",
+                    "description": "Cotton Tote Bags ",
+                    "productCount": "6+",
+                    "dataFile": "constants/products/Tote Bags/Cotton/products.json"
+                },
+                {
+                    "id": "sub-custom",
+                    "name": "Custom",
+                    "image": "https://picsum.photos/seed/sub-custom1/400/400",
+                    "description": "Custom Tote Bags ",
+                    "productCount": "6+",
+                    "dataFile": "constants/products/Tote Bags/Custom/products.json"
+                },
+                {
+                    "id": "sub-designer",
+                    "name": "Designer",
+                    "image": "https://picsum.photos/seed/sub-designer1/400/400",
+                    "description": "Designer Tote Bags ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Tote Bags/Designer/products.json"
+                },
+                {
+                    "id": "sub-ecofriendly",
+                    "name": "Eco-Friendly",
+                    "image": "https://picsum.photos/seed/sub-ecofriendly1/400/400",
+                    "description": "Eco-Friendly Tote Bags ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Tote Bags/Eco-Friendly/products.json"
+                },
+                {
+                    "id": "sub-embroidered",
+                    "name": "Embroidered",
+                    "image": "https://picsum.photos/seed/sub-embroidered1/400/400",
+                    "description": "Embroidered Tote Bags ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Tote Bags/Embroidered/products.json"
+                },
+                {
+                    "id": "sub-foldable",
+                    "name": "Foldable",
+                    "image": "https://picsum.photos/seed/sub-foldable1/400/400",
+                    "description": "Foldable Tote Bags ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Tote Bags/Foldable/products.json"
+                },
+                {
+                    "id": "sub-grocery",
+                    "name": "Grocery",
+                    "image": "https://picsum.photos/seed/sub-grocery1/400/400",
+                    "description": "Grocery Tote Bags ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Tote Bags/Grocery/products.json"
+                },
+                {
+                    "id": "sub-jute",
+                    "name": "Jute",
+                    "image": "https://picsum.photos/seed/sub-jute1/400/400",
+                    "description": "Jute Tote Bags ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Tote Bags/Jute/products.json"
+                },
+                {
+                    "id": "sub-laptop",
+                    "name": "Laptop",
+                    "image": "https://picsum.photos/seed/sub-laptop1/400/400",
+                    "description": "Laptop Tote Bags ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Tote Bags/Laptop/products.json"
+                },
+                {
+                    "id": "sub-leather",
+                    "name": "Leather",
+                    "image": "https://picsum.photos/seed/sub-leather1/400/400",
+                    "description": "Leather Tote Bags ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Tote Bags/Leather/products.json"
+                },
+                {
+                    "id": "sub-mini",
+                    "name": "Mini",
+                    "image": "https://picsum.photos/seed/sub-mini1/400/400",
+                    "description": "Mini Tote Bags ",
+                    "productCount": "2+",
+                    "dataFile": "constants/products/Tote Bags/Mini/products.json"
+                },
+                {
+                    "id": "sub-open",
+                    "name": "Open",
+                    "image": "https://picsum.photos/seed/sub-open1/400/400",
+                    "description": "Open Tote Bags ",
+                    "productCount": "1+",
+                    "dataFile": "constants/products/Tote Bags/Open/products.json"
+                },
+                {
+                    "id": "sub-oversized",
+                    "name": "Oversized",
+                    "image": "https://picsum.photos/seed/sub-oversized1/400/400",
+                    "description": "Oversized Tote Bags ",
+                    "productCount": "169+",
+                    "dataFile": "constants/products/T-Shirts/Men Clothing/Oversized/products.json"
+                },
+                {
+                    "id": "sub-plain",
+                    "name": "Plain",
+                    "image": "https://picsum.photos/seed/sub-plain1/400/400",
+                    "description": "Plain Tote Bags ",
+                    "productCount": "18+",
+                    "dataFile": "constants/products/Tote Bags/Plain/products.json"
+                },
+                {
+                    "id": "sub-printed",
+                    "name": "Printed",
+                    "image": "https://picsum.photos/seed/sub-printed1/400/400",
+                    "description": "Printed Tote Bags ",
+                    "productCount": "153+",
+                    "dataFile": "constants/products/Tote Bags/Printed/products.json"
+                },
+                {
+                    "id": "sub-transparent",
+                    "name": "Transparent",
+                    "image": "https://picsum.photos/seed/sub-transparent1/400/400",
+                    "description": "Transparent Tote Bags ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Tote Bags/Transparent/products.json"
+                },
+                {
+                    "id": "sub-waterproof",
+                    "name": "Waterproof",
+                    "image": "https://picsum.photos/seed/sub-waterproof1/400/400",
+                    "description": "Waterproof Tote Bags ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Tote Bags/Waterproof/products.json"
+                },
+                {
+                    "id": "sub-zipper",
+                    "name": "Zipper",
+                    "image": "https://picsum.photos/seed/sub-zipper1/400/400",
+                    "description": "Zipper Tote Bags ",
+                    "productCount": "8+",
+                    "dataFile": "constants/products/Tote Bags/Zipper/products.json"
+                }
+            ]
+        },
+        {
+            "id": "cat-mens-special",
+            "name": "Men's Special",
+            "image": "https://static.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=https%3A%2F%2Fwww.yourprint.in%2Fwp-content%2Fuploads%2F2025%2F08%2FTshirt-half-sleeve.png&resizeTo=180&format=webp",
+            "description": "Curated collection for Men",
+            "subcategories": []
+        },
+        {
+            "id": "cat-womens-special",
+            "name": "Women's Special",
+            "image": "https://static.yourprint.in/new-admin-ajax.php?action=resize_outer_image&cfcache=all&url=https%3A%2F%2Fwww.yourprint.in%2Fwp-content%2Fuploads%2F2025%2F08%2Fwomens-half-sleeve-tshirt.png&resizeTo=180&format=webp",
+            "description": "Curated collection for Women",
+            "subcategories": []
+        }
+    ]
+}

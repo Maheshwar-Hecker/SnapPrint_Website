@@ -35,7 +35,7 @@ function createProductCard(config) {
         showWishlist = true,
         showRating = true,
         showDiscount = true,
-        productId = `product-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
+        productId = config.id || `product-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
     } = config;
 
     // Calculate discount percentage
@@ -43,20 +43,47 @@ function createProductCard(config) {
         ? Math.round(((originalPrice - price) / originalPrice) * 100)
         : 0;
 
-    // Generate star rating
-    const fullStars = Math.floor(rating);
-    const hasHalfStar = rating % 1 >= 0.5;
-    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+    // Badge styling mapping
+    const getBadgeClass = (badgeText) => {
+        return badgeText ? 'badge-standard' : '';
+    };
+
+    // Dynamic SEO Keywords Mapping based on product title
+    const seoKeywordsMap = {
+        't-shirt': 'custom t shirts India, printed t shirts online, design your own t shirt',
+        'hoodie': 'custom hoodies India, personalized hoodies, custom sweatshirts',
+        'mug': 'custom mugs India, photo mugs online, birthday photo gifts',
+        'frame': 'custom photo frames, photo collage prints, custom wall frames',
+        'phone': 'custom phone cases, printed mobile covers',
+        'keychain': 'custom keychains India, engraved accessories',
+        'tote': 'custom tote bags, printed tote bags India',
+        'kids': 'custom kids clothing, personalized kids wear',
+        'default': 'personalized gifts online, custom printing India, print on demand India'
+    };
+
+    let dynamicKeywords = seoKeywordsMap['default'];
+    if (title) {
+        const lowerTitle = title.toLowerCase();
+        for (const [key, keywords] of Object.entries(seoKeywordsMap)) {
+            if (key !== 'default' && lowerTitle.includes(key)) {
+                dynamicKeywords = keywords;
+                break;
+            }
+        }
+    }
 
     return `
-        <a href="${link}" class="product-card-link" style="text-decoration: none; color: inherit; display: block; height: 100%;">
-            <div class="product-card-detail ${variant ? `product-card-${variant}` : ''}" data-product-id="${productId}">
-                ${badge ? `<div class="product-badge">${badge}</div>` : ''}
+        <a href="${link}" class="product-card-link" title="${title} | ${dynamicKeywords}" onclick="if(window.analyticsService) window.analyticsService.trackProductView(${JSON.stringify(config).replace(/"/g, '&quot;')});" style="text-decoration: none; color: inherit; display: block; height: 100%;">
+            <div class="product-card-detail ${variant ? `product-card-${variant}` : ''}" data-product-id="${productId}" data-keywords="${dynamicKeywords}">
+                <div class="badge-stack">
+                    ${badge ? `<div class="product-badge badge-standard">${badge}</div>` : ''}
+                    ${config.productTag ? `<div class="product-tag">${config.productTag}</div>` : ''}
+                </div>
                 
                 <div class="product-card-image">
-                    <img src="${image}" alt="${title}" loading="lazy">
+                    <img src="${image}" alt="${title} - ${dynamicKeywords}" loading="lazy">
                     ${showWishlist ? `
-                        <button class="wishlist-btn" onclick="event.preventDefault(); event.stopPropagation(); toggleWishlist('${productId}')" data-product-id="${productId}" aria-label="Add to wishlist">
+                        <button class="wishlist-btn" data-product-id="${productId}" aria-label="Add to wishlist">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
                             </svg>
@@ -120,105 +147,126 @@ function renderProducts(products, containerId, options = {}) {
     ).join('');
     
     container.innerHTML = html;
+    
+    // Add reveal classes for scroll animation
+    container.classList.add('reveal', 'reveal-up');
 
     // Attach wishlist event listeners
     attachWishlistListeners(container);
 
-    // Add staggered animation
-    if (staggerAnimation) {
-        const cards = container.querySelectorAll('.product-card');
-        cards.forEach((card, index) => {
-            card.style.animation = `fadeInUp 0.5s ease-out ${index * 0.05}s both`;
-        });
+    // Initialise with ScrollReveal if available
+    if (window.ScrollReveal) {
+        window.ScrollReveal.observe(container);
     }
 }
 
 /**
- * Attach wishlist button event listeners
- * @param {HTMLElement} container - Container element
+ * Attach wishlist button event listeners (auth-aware via wishlistService)
+ * @param {HTMLElement} container
  */
 function attachWishlistListeners(container) {
+    // First sync existing state
+    initializeWishlistStates();
+
     const wishlistButtons = container.querySelectorAll('.wishlist-btn');
-    
     wishlistButtons.forEach(button => {
         button.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
-            
+
             const productId = button.dataset.productId;
+
+            // Require login via wishlistService
+            const user = window.authService?.getCurrentUser();
+            if (!user) {
+                window.dispatchEvent(new CustomEvent('wishlist:require-login'));
+                // Shake the button to hint login needed
+                button.style.animation = 'none';
+                requestAnimationFrame(() => { button.style.animation = 'wlShake 0.4s ease'; });
+                return;
+            }
+
             const isActive = button.classList.contains('active');
-            
+
             if (isActive) {
                 button.classList.remove('active');
-                removeFromWishlist(productId);
+                window.wishlistService?.remove(productId);
+                button.style.animation = 'none';
+                requestAnimationFrame(() => { button.style.animation = 'heartBeat 0.35s ease'; });
             } else {
                 button.classList.add('active');
-                addToWishlist(productId);
-                
-                // Add animation
-                button.style.animation = 'heartBeat 0.5s ease';
-                setTimeout(() => {
-                    button.style.animation = '';
-                }, 500);
+                window.wishlistService?.add(productId);
+                // Premium heart burst effect
+                heartBurst(button);
             }
         });
     });
 }
 
 /**
- * Add product to wishlist
- * @param {string} productId - Product ID
+ * Heart burst particle effect
  */
-function addToWishlist(productId) {
-    let wishlist = getWishlist();
-    if (!wishlist.includes(productId)) {
-        wishlist.push(productId);
-        saveWishlist(wishlist);
-        console.log(`Product ${productId} added to wishlist`);
-        // TODO: Trigger wishlist update event
+function heartBurst(button) {
+    const rect = button.getBoundingClientRect();
+    const cx = rect.left + rect.width / 2;
+    const cy = rect.top + rect.height / 2;
+    for (let i = 0; i < 8; i++) {
+        const p = document.createElement('div');
+        const angle = (i / 8) * 360;
+        const dist = 28 + Math.random() * 16;
+        p.style.cssText = `
+            position: fixed;
+            left: ${cx}px; top: ${cy}px;
+            width: 7px; height: 7px;
+            border-radius: 50%;
+            background: ${['#ff4d6d','#ff6b6b','#ff8fa3','#ffc2d1'][i % 4]};
+            pointer-events: none; z-index: 99999;
+            transform: translate(-50%, -50%);
+            animation: particleFly 0.55s cubic-bezier(0.4,0,0.2,1) forwards;
+            --dx: ${Math.cos(angle * Math.PI / 180) * dist}px;
+            --dy: ${Math.sin(angle * Math.PI / 180) * dist}px;
+        `;
+        document.body.appendChild(p);
+        setTimeout(() => p.remove(), 600);
     }
+    button.style.animation = 'none';
+    requestAnimationFrame(() => { button.style.animation = 'heartBeat 0.5s ease'; });
 }
 
-/**
- * Remove product from wishlist
- * @param {string} productId - Product ID
- */
-function removeFromWishlist(productId) {
-    let wishlist = getWishlist();
-    wishlist = wishlist.filter(id => id !== productId);
-    saveWishlist(wishlist);
-    console.log(`Product ${productId} removed from wishlist`);
-    // TODO: Trigger wishlist update event
-}
+// Particle keyframe injection
+(function() {
+    if (document.getElementById('heart-burst-style')) return;
+    const s = document.createElement('style');
+    s.id = 'heart-burst-style';
+    s.textContent = `
+        @keyframes particleFly {
+            0%   { transform: translate(-50%,-50%) scale(1); opacity: 1; }
+            100% { transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(0); opacity: 0; }
+        }
+        @keyframes wlShake {
+            0%,100% { transform: translateX(0); }
+            20%     { transform: translateX(-5px) rotate(-8deg); }
+            40%     { transform: translateX(5px) rotate(8deg); }
+            60%     { transform: translateX(-4px) rotate(-5deg); }
+            80%     { transform: translateX(4px) rotate(5deg); }
+        }
+        .wishlist-btn.active svg { fill: #ff4d6d; stroke: #ff4d6d; }
+        .wishlist-btn.active { background: #fff0f3 !important; }
+    `;
+    document.head.appendChild(s);
+})();
 
 /**
- * Get wishlist from localStorage
- * @returns {Array} Array of product IDs
- */
-function getWishlist() {
-    const wishlist = localStorage.getItem('snapprint_wishlist');
-    return wishlist ? JSON.parse(wishlist) : [];
-}
-
-/**
- * Save wishlist to localStorage
- * @param {Array} wishlist - Array of product IDs
- */
-function saveWishlist(wishlist) {
-    localStorage.setItem('snapprint_wishlist', JSON.stringify(wishlist));
-}
-
-/**
- * Initialize wishlist states for products on page
+ * Sync wishlist button states from wishlistService
  */
 function initializeWishlistStates() {
-    const wishlist = getWishlist();
-    const wishlistButtons = document.querySelectorAll('.wishlist-btn');
-    
-    wishlistButtons.forEach(button => {
-        const productId = button.dataset.productId;
-        if (wishlist.includes(productId)) {
-            button.classList.add('active');
+    if (!window.wishlistService) return;
+    const ids = window.wishlistService.getIds();
+    document.querySelectorAll('.wishlist-btn').forEach(btn => {
+        if (ids.includes(btn.dataset.productId)) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
         }
     });
 }
@@ -279,6 +327,32 @@ style.textContent = `
 
     .product-card-curved-all {
         border-radius: 24px;
+    }
+
+    .badge-stack {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        z-index: 5;
+        pointer-events: none;
+    }
+
+    .product-tag, .product-badge {
+        position: static !important;
+        background: #000;
+        color: #fff;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        width: fit-content;
+        pointer-events: auto;
     }
 
     .rating-count {
