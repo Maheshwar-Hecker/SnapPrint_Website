@@ -25,26 +25,33 @@
     "last_chosen_address": 1,
     "analytics": {
         "categoryInterests": {
-            "T-Shirts": 8,
+            "T-Shirts": 11,
             "Decor": 8,
             "Men's Special": 6,
             "Phone Cases": 2,
             "Women's Special": 2,
             "Jewelry": 2,
-            "Mugs & Cups": 1,
+            "Mugs & Cups": 2,
             "Kids Clothing": 2,
-            "Photo Frames": 2
+            "Photo Frames": 2,
+            "Footwear": 5
         },
         "subcategoryInterests": {
-            "Printed": 1
+            "Printed": 2,
+            "Flip Flops": 1,
+            "Full Sleeves": 1
         },
         "badgeInterests": {
-            "50% OFF": 1
+            "50% OFF": 2,
+            "55% OFF": 1
         },
         "viewHistory": [
+            "sub-printed-99",
+            "sub-menclothing-fullsleeves-1",
+            "p-sub-flipflops-1",
             "sub-printed-22"
         ],
-        "lastInteracted": 1777680409232
+        "lastInteracted": 1777690597486
     },
-    "lastSync": "2026-05-02 02:06:49"
+    "lastSync": "2026-05-02 04:56:37"
 }
