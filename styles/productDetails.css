@@ -1783,7 +1783,8 @@
     overflow: hidden !important;
     position: relative !important;
     transition: transform 0.2s, box-shadow 0.2s !important;
-    height: 330px !important; /* Total height absolutely fixed */
+    height: 330px !important;
+    /* Total height absolutely fixed */
     box-sizing: border-box !important;
 }
 
@@ -1986,4 +1987,9 @@
     backdrop-filter: blur(10px);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+backdrop-filter: blur(10px);
+box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+border: 1px solid rgba(255, 255, 255, 0.5);
 }

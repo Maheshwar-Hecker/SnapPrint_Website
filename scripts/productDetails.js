@@ -869,7 +869,7 @@ function setupCustomizer() {
 
                     const fabricImg = new Image();
                     fabricImg.crossOrigin = "anonymous";
-                    
+
                     const drawAndCopy = new Promise((resolve, reject) => {
                         fabricImg.onload = () => {
                             try {
