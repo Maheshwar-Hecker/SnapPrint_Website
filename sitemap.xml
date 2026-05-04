@@ -1,99 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Homepage -->
+  <!-- Core Pages -->
   <url>
     <loc>https://snapprint.in/</loc>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
-
-  <!-- Search Page -->
   <url>
     <loc>https://snapprint.in/searchPage.html</loc>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- Profile -->
   <url>
-    <loc>https://snapprint.in/profile.html</loc>
+    <loc>https://snapprint.in/productDetails.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
-
-  <!-- Wishlist -->
   <url>
-    <loc>https://snapprint.in/wishlist.html</loc>
+    <loc>https://snapprint.in/customizer.html</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
   </url>
-
+  
   <!-- Category Pages -->
   <url>
-    <loc>https://snapprint.in/productCategory.html?category=T-Shirts</loc>
+    <loc>https://snapprint.in/productCategory.html?category=Decor</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://snapprint.in/productCategory.html?category=Face%20Masks</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://snapprint.in/productCategory.html?category=Footwear</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://snapprint.in/productCategory.html?category=Hoodies</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://snapprint.in/productCategory.html?category=Mugs%20%26%20Cups</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://snapprint.in/productCategory.html?category=Phone%20Cases</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://snapprint.in/productCategory.html?category=Photo%20Frames</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://snapprint.in/productCategory.html?category=Key%20Chains</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://snapprint.in/productCategory.html?category=Tote%20Bags</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://snapprint.in/productCategory.html?category=Decor</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://snapprint.in/productCategory.html?category=Jewelry</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://snapprint.in/productCategory.html?category=Pendants</loc>
+    <loc>https://snapprint.in/productCategory.html?category=Key%20Chains</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://snapprint.in/productCategory.html?category=Face%20Masks</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://snapprint.in/productCategory.html?category=Footwear</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://snapprint.in/productCategory.html?category=Kids%20Clothing</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://snapprint.in/productCategory.html?category=Mugs%20%26%20Cups</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://snapprint.in/productCategory.html?category=Pendants</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://snapprint.in/productCategory.html?category=Phone%20Cases</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://snapprint.in/productCategory.html?category=Photo%20Frames</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://snapprint.in/productCategory.html?category=T-Shirts</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://snapprint.in/productCategory.html?category=Tote%20Bags</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
   <url>
     <loc>https://snapprint.in/productCategory.html?category=Men%27s%20Special</loc>
@@ -105,5 +98,4 @@
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-
 </urlset>

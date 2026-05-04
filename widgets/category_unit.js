@@ -49,7 +49,7 @@ function createCategoryUnit(config) {
 
     const sizeClass = sizeMapping[name] || "category-small";
     const isImagePath = icon.includes('/');
-    
+
     // Assign a theme color based on the category name
     const themeColor = ringColors[name.length % ringColors.length];
 
@@ -57,7 +57,7 @@ function createCategoryUnit(config) {
     if (isImagePath) {
         // Use encodeURI for paths with spaces to ensure hosting compatibility
         const encodedIcon = encodeURI(icon);
-        bgHtml = `<img src="${encodedIcon}" class="category-bg" loading="lazy" alt="${name}" onload="this.classList.add('loaded')" style="background-color: #f4f4f4;">`;
+        bgHtml = `<img src="${encodedIcon}" class="category-bg" loading="lazy" alt="${name}" onload="this.classList.add('loaded')" onerror="this.classList.add('loaded')" style="background-color: #f4f4f4;">`;
     } else {
         bgHtml = `<div class="category-bg loaded" style="background-color: #f4f4f4;"></div><span class="category-emoji">${icon}</span>`;
     }
@@ -85,11 +85,11 @@ function renderCategories(categories, containerId) {
 
     // Prioritize specific categories to appear first
     const topCategories = ["Men's Special", "Women's Special", "T-Shirts"];
-    
+
     categories.sort((a, b) => {
         const aIndex = topCategories.indexOf(a.name);
         const bIndex = topCategories.indexOf(b.name);
-        
+
         if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex;
         if (aIndex !== -1) return -1;
         if (bIndex !== -1) return 1;
@@ -105,6 +105,11 @@ function renderCategories(categories, containerId) {
     // Initialize Mobile Slider controls (CSS handles visibility)
     setTimeout(() => {
         initMobileCategorySlider(container);
+        
+        // Ensure ScrollReveal finds these new elements
+        if (window.ScrollReveal && typeof window.ScrollReveal.refresh === 'function') {
+            window.ScrollReveal.refresh();
+        }
     }, 100);
 }
 
@@ -119,11 +124,11 @@ function initMobileCategorySlider(container) {
         const leftBtn = document.createElement('button');
         leftBtn.className = 'cat-nav-btn cat-nav-left';
         leftBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>';
-        
+
         const rightBtn = document.createElement('button');
         rightBtn.className = 'cat-nav-btn cat-nav-right';
         rightBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>';
-        
+
         wrapper.appendChild(leftBtn);
         wrapper.appendChild(rightBtn);
 
@@ -153,9 +158,9 @@ function initMobileCategorySlider(container) {
         };
 
         container.addEventListener('touchstart', () => { isHovered = true; stopAutoScroll(); }, { passive: true });
-        container.addEventListener('touchend', () => { 
-            isHovered = false; 
-            setTimeout(() => { if(!isHovered) startAutoScroll(); }, 2000); 
+        container.addEventListener('touchend', () => {
+            isHovered = false;
+            setTimeout(() => { if (!isHovered) startAutoScroll(); }, 2000);
         }, { passive: true });
 
         wrapper.addEventListener('mouseenter', () => { isHovered = true; stopAutoScroll(); });

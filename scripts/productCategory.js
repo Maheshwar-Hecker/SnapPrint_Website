@@ -19,7 +19,7 @@ const heroSlides = document.querySelectorAll('.hero-slide');
 
 function rotateHeroBackground() {
     if (heroSlides.length === 0) return;
-    
+
     heroSlides[currentSlide].classList.remove('active');
     currentSlide = (currentSlide + 1) % heroSlides.length;
     heroSlides[currentSlide].classList.add('active');
@@ -34,10 +34,10 @@ if (heroSlides.length > 0) {
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('🚀 Loading Product Category Page...');
     console.log('Current Category:', currentCategory);
-    
+
     // Load category data via dataService
     await loadCategoryData();
-    
+
     // Render page sections
     if (categoryData) {
         updatePageHeader();
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         renderPreviouslyViewed();
         renderMixedCategories();
     }
-    
+
     console.log('✅ Product Category Page Ready!');
 });
 
@@ -87,16 +87,16 @@ function loadHeroImages() {
             'https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?w=1200&h=600&fit=crop'
         ]
     };
-    
+
     const images = categoryImages[categoryData.name] || categoryImages.default;
     const slides = document.querySelectorAll('.hero-slide');
-    
+
     slides.forEach((slide, index) => {
         if (images[index]) {
             slide.style.backgroundImage = `linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(45,45,45,0.6) 100%), url('${images[index]}')`;
         }
     });
-    
+
     // Load floating images
     const floatingImgs = document.querySelectorAll('.floating-img');
     floatingImgs.forEach((img, index) => {
@@ -112,19 +112,19 @@ function loadHeroImages() {
 async function loadCategoryData() {
     await window.dataService.init();
     const db = window.dataService.productsDB;
-    
+
     // Find category (case insensitive match of URL param)
     // Be more flexible with dashes in category names
     const normalizedParam = currentCategory.replace(/[-\s]/g, '');
     categoryData = db.categories.find(c => {
         const normalizedName = c.name.replace(/[-\s]/g, '').toLowerCase();
-        return normalizedName === normalizedParam.toLowerCase() || 
-               c.id.toLowerCase().includes(normalizedParam.toLowerCase());
+        return normalizedName === normalizedParam.toLowerCase() ||
+            c.id.toLowerCase().includes(normalizedParam.toLowerCase());
     });
-    
+
     if (!categoryData) {
         console.warn('Category not found:', currentCategory, 'Falling back to first available.');
-        categoryData = db.categories[0]; 
+        categoryData = db.categories[0];
     }
 
     // Set icons
@@ -142,10 +142,10 @@ async function loadCategoryData() {
         'Footwear': 'constants/icons/slipper.svg',
         'Decor': 'constants/icons/star.svg'
     };
-    
+
     categoryData.icon = iconsMap[categoryData.name] || 'constants/icons/star.svg';
     categoryData.description = `Premium custom ${categoryData.name.toLowerCase()}`;
-    
+
     // Fetch products belonging to this category
     categoryProducts = await window.dataService.getProductsByCategory(categoryData.name);
 
@@ -163,7 +163,7 @@ function updatePageHeader() {
     document.getElementById('category-icon').textContent = categoryData.icon;
     document.getElementById('category-title').textContent = categoryData.name;
     document.getElementById('category-description').textContent = categoryData.description;
-    
+
     // SEO Data Mapping
     const seoData = {
         'T-Shirts': {
@@ -210,7 +210,7 @@ function updatePageHeader() {
     };
 
     document.title = currentSeo.title;
-    
+
     let metaDesc = document.querySelector('meta[name="description"]');
     if (metaDesc) {
         metaDesc.setAttribute("content", currentSeo.desc);
@@ -228,19 +228,19 @@ function updatePageHeader() {
 function renderSubcategories() {
     const mainGrid = document.getElementById('new-arrivals-grid');
     const secondaryGrid = document.getElementById('collections-grid');
-    
+
     const isSpecialCategory = ['T-Shirts', 'Hoodies'].includes(categoryData.name);
 
     if (isSpecialCategory && categoryData.sections) {
         // Clear existing grids
         mainGrid.parentElement.style.display = 'none';
         secondaryGrid.parentElement.style.display = 'none';
-        
+
         // Render the specific sections separately (Men/Women)
         // Use a wrapper to maintain order
         const dynamicContainerId = 'dynamic-sections-container';
         let dynamicContainer = document.getElementById(dynamicContainerId);
-        
+
         if (!dynamicContainer) {
             dynamicContainer = document.createElement('div');
             dynamicContainer.id = dynamicContainerId;
@@ -251,7 +251,7 @@ function renderSubcategories() {
 
         categoryData.sections.forEach((section, index) => {
             if (!section.subcategories || section.subcategories.length === 0) return;
-            
+
             const sectionHtml = `
                 <section class="subcategory-section category-dynamic-section">
                     <div class="category-section-header">
@@ -259,12 +259,12 @@ function renderSubcategories() {
                     </div>
                     <div class="subcategory-grid" id="section-grid-${index}">
                         ${section.subcategories.map(sub => {
-                            // Sub.products might not be pre-loaded, check existence safely
-                            if (!sub.image && sub.products && sub.products.length > 0) {
-                                sub.image = sub.products[0].image;
-                            }
-                            return createSubcategoryCard(sub);
-                        }).join('')}
+                // Sub.products might not be pre-loaded, check existence safely
+                if (!sub.image && sub.products && sub.products.length > 0) {
+                    sub.image = sub.products[0].image;
+                }
+                return createSubcategoryCard(sub);
+            }).join('')}
                     </div>
                 </section>
             `;
@@ -274,24 +274,24 @@ function renderSubcategories() {
         // For other categories or if sections don't exist, use standard grid
         mainGrid.parentElement.style.display = 'block';
         secondaryGrid.parentElement.style.display = 'block';
-        
+
         const subcategories = categoryData.subcategories || [];
         // Flatten sections if they exist but we are not in special category
-        const allSubs = categoryData.sections 
+        const allSubs = categoryData.sections
             ? categoryData.sections.flatMap(s => s.subcategories)
             : subcategories;
 
         const midPoint = Math.ceil(allSubs.length / 2);
         const newArrivals = allSubs.slice(0, midPoint);
         const collections = allSubs.slice(midPoint);
-        
+
         mainGrid.innerHTML = newArrivals.map(sub => {
             if (!sub.image && sub.products && sub.products.length > 0) {
                 sub.image = sub.products[0].image || '';
             }
             return createSubcategoryCard(sub);
         }).join('');
-        
+
         secondaryGrid.innerHTML = collections.map(sub => {
             if (!sub.image && sub.products && sub.products.length > 0) {
                 sub.image = sub.products[0].image || '';
@@ -299,9 +299,9 @@ function renderSubcategories() {
             return createSubcategoryCard(sub);
         }).join('');
     }
-    
+
     // Render Color/GSM logic stays same...
-    
+
     // Update hero stats
     let totalProductsCount = 0;
     let subCount = 0;
@@ -321,7 +321,7 @@ function renderSubcategories() {
             totalProductsCount += count;
         });
     }
-    
+
     document.getElementById('total-products').textContent = `${totalProductsCount}+`;
     document.getElementById('subcategory-count').textContent = subCount;
 
@@ -512,7 +512,7 @@ function navigateToSubcategory(subcategoryId) {
  */
 async function renderRelatedProducts() {
     const categoryName = categoryData.name;
-    
+
     // Safety check - if category has no products, fetch some random ones
     let sourceProducts = categoryProducts;
     if (!sourceProducts || sourceProducts.length === 0) {
@@ -521,17 +521,17 @@ async function renderRelatedProducts() {
 
     // Shuffle helper
     const shuffle = arr => [...arr].sort(() => 0.5 - Math.random());
-    
+
     // Section 1: Popular Choices
     document.getElementById('related-section-1-title').textContent = `Popular ${categoryName}`;
     const products1 = shuffle(sourceProducts).slice(0, 6);
     renderProducts(products1, 'related-products-1');
-    
+
     // Section 2: Trending Now
     document.getElementById('related-section-2-title').textContent = `Trending ${categoryName}`;
     const products2 = shuffle(sourceProducts).slice(0, 6);
     renderProducts(products2, 'related-products-2');
-    
+
     // Section 3: Best Sellers
     document.getElementById('related-section-3-title').textContent = `Best Selling ${categoryName}`;
     const products3 = shuffle(sourceProducts).slice(0, 6);
@@ -547,7 +547,7 @@ async function renderRelatedProducts() {
     if (under499.length < 8) {
         // Mock the price if not enough
         under499 = shuffle(sourceProducts).slice(0, 8).map(p => {
-            return {...p, price: Math.floor(Math.random() * 200) + 199, badge: 'VALUE'};
+            return { ...p, price: Math.floor(Math.random() * 200) + 199, badge: 'VALUE' };
         });
     } else {
         under499 = shuffle(under499).slice(0, 8);
@@ -589,17 +589,17 @@ function formatCurrency(amount) {
  */
 function toggleWishlist(itemId) {
     if (!window.wishlistService) return;
-    
+
     // Check if user is logged in first
     const user = window.authService?.getCurrentUser();
     if (!user) {
         window.dispatchEvent(new CustomEvent('wishlist:require-login'));
         return;
     }
-    
+
     const wishlistBtn = event.currentTarget;
     const isNowActive = !wishlistBtn.classList.contains('active');
-    
+
     if (isNowActive) {
         wishlistBtn.classList.add('active');
         window.wishlistService.add(itemId, 'subcategory');
@@ -639,9 +639,9 @@ function showNotification(message) {
         animation: slideInUp 0.3s ease-out;
     `;
     notification.textContent = message;
-    
+
     document.body.appendChild(notification);
-    
+
     // Remove after 2 seconds
     setTimeout(() => {
         notification.style.animation = 'slideOutDown 0.3s ease-out';

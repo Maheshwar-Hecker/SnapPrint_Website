@@ -30,7 +30,76 @@
       "name": "SnapPrint",
       "url": "https://snapprint.in/",
       "logo": "https://snapprint.in/constants/images/logo.jpeg",
-      "description": "India's No. 1 Custom Printing and Accessories Brand"
+      "description": "India's No. 1 Custom Printing and Accessories Brand",
+      "sameAs": [
+        "https://www.facebook.com/snapprint",
+        "https://www.instagram.com/snapprint",
+        "https://twitter.com/snapprint"
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Product Categories",
+      "description": "Browse our wide range of custom printed products",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Men's Special",
+          "url": "https://snapprint.in/productCategory.html?category=Men%27s%20Special"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Women's Special",
+          "url": "https://snapprint.in/productCategory.html?category=Women%27s%20Special"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Custom T-Shirts",
+          "url": "https://snapprint.in/productCategory.html?category=T-Shirts"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Custom Hoodies",
+          "url": "https://snapprint.in/productCategory.html?category=Hoodies"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Personalized Mugs",
+          "url": "https://snapprint.in/productCategory.html?category=Mugs%20%26%20Cups"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Phone Cases",
+          "url": "https://snapprint.in/productCategory.html?category=Phone%20Cases"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Photo Frames",
+          "url": "https://snapprint.in/productCategory.html?category=Photo%20Frames"
+        }
+      ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://snapprint.in/"
+      }]
     }
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,8 +113,24 @@
     <link rel="stylesheet" href="styles/loader.css">
     <link rel="stylesheet" href="styles/category_redesign.css">
     <script src="scripts/loader.js"></script>
-    <link rel="icon" type="image/x-icon" href="constants/images/favicon.ico">
-    <link rel="apple-touch-icon" href="constants/images/apple-touch-icon.png">
+    <link rel="manifest" href="https://snapprint.in/manifest.json">
+    <meta name="theme-color" content="#000000">
+    <link rel="icon" type="image/x-icon" href="https://snapprint.in/constants/images/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://snapprint.in/constants/images/logo-192x192.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://snapprint.in/constants/images/logo-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://snapprint.in/constants/images/logo-192x192.png">
+    <link rel="apple-touch-icon" href="https://snapprint.in/constants/images/logo-192x192.png">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" href="https://snapprint.in/">
+    <meta property="og:title" content="SnapPrint – Custom Printing & Personalized Gifts Online in India">
+    <meta property="og:description" content="SnapPrint offers custom t-shirts, mugs, phone cases, and personalized gifts online in India. Design your own products with fast delivery and premium quality.">
+    <meta property="og:image" content="https://snapprint.in/constants/images/logo.jpeg">
+    <meta property="og:url" content="https://snapprint.in/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SnapPrint – Custom Printing & Personalized Gifts Online in India">
+    <meta name="twitter:description" content="SnapPrint offers custom t-shirts, mugs, phone cases, and personalized gifts online in India. Design your own products with fast delivery and premium quality.">
+    <meta name="twitter:image" content="https://snapprint.in/constants/images/logo.jpeg">
 </head>
 
 <body>
@@ -120,21 +205,21 @@
                     </button>
                 </div>
 
-                <div class="header-actions">
-                    <button class="header-btn" id="wishlist-header-btn" onclick="window.location.href='wishlist.html'">
+                <nav class="header-actions" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                    <button class="header-btn" id="wishlist-header-btn" onclick="window.location.href='wishlist.html'" itemprop="url">
                         <img src="constants/icons/heart.svg" alt="Wishlist" class="icon">
-                        <span>Wishlist</span>
+                        <span itemprop="name">Wishlist</span>
                         <span class="wishlist-badge" id="wishlist-badge" style="display:none;">0</span>
                     </button>
-                    <button class="header-btn">
+                    <button class="header-btn" itemprop="url">
                         <img src="constants/icons/cart.svg" alt="Cart" class="icon">
-                        <span>Cart</span>
+                        <span itemprop="name">Cart</span>
                     </button>
-                    <button class="header-btn login-btn">
+                    <button class="header-btn login-btn" itemprop="url">
                         <img src="constants/icons/user.svg" alt="Login" class="icon">
-                        <span>Login</span>
+                        <span itemprop="name">Login</span>
                     </button>
-                </div>
+                </nav>
             </div>
         </header>
 
@@ -188,7 +273,7 @@
             <div class="section-header">
                 <h2>Explore Our Custom Printing</h2>
             </div>
-            <div id="category-grid" class="category-grid"></div>
+            <div id="category-grid" class="category-grid"><!-- JS_INJECT_MARKER --></div>
         </section>
 
 

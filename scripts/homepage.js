@@ -56,35 +56,85 @@ const heroSlides = [
 document.addEventListener('DOMContentLoaded', async () => {
     console.log('🚀 SnapPrint Homepage Loading...');
 
-    // Wait for dataService to load db
-    await window.dataService.init();
+    /**
+     * Centralized Category Initialization
+     */
+    const initCategories = async () => {
+        try {
+            let db = await window.dataService.init();
+            
+            // CRITICAL FALLBACK: If DB is empty or fails, use these core categories so it's NEVER empty
+            let dbCats = (db && db.categories && db.categories.length > 0) ? db.categories : [
+                { name: "T-Shirts" }, { name: "Hoodies" }, { name: "Mugs & Cups" }, { name: "Decor" }, { name: "Phone Cases" }
+            ];
 
-    // Convert JSON database categories to UI categories array
-    let dbCategories = window.dataService.productsDB.categories;
+            const categories = dbCats.map(cat => {
+                let count = 0;
+                const processCount = (subs) => {
+                    if (!subs) return;
+                    subs.forEach(s => {
+                        if (s.productCount) {
+                            const num = parseInt(s.productCount);
+                            if (!isNaN(num)) count += num;
+                        } else if (s.products) {
+                            count += s.products.length;
+                        }
+                    });
+                };
 
-    let categories = dbCategories.map(cat => {
-        let count = 0;
-        if (cat.sections) {
-            cat.sections.forEach(sec => {
-                sec.subcategories.forEach(s => count += (s.products ? s.products.length : 0));
+                if (cat.sections) {
+                    cat.sections.forEach(sec => processCount(sec.subcategories));
+                } else if (cat.subcategories) {
+                    processCount(cat.subcategories);
+                }
+
+                return {
+                    name: cat.name || "Product",
+                    icon: typeof getCategoryIcon === 'function' ? getCategoryIcon(cat.name) : '📦',
+                    count: count,
+                    link: `productCategory.html?category=${encodeURIComponent(cat.name || "")}`
+                };
             });
-        } else if (cat.subcategories) {
-            cat.subcategories.forEach(s => count += (s.products ? s.products.length : 0));
-        }
 
-        return {
-            name: cat.name,
-            icon: typeof getCategoryIcon === 'function' ? getCategoryIcon(cat.name) : '📦',
-            count: count,
-            link: `productCategory.html?category=${encodeURIComponent(cat.name)}`
-        };
-    });
+            if (categories.length > 0) {
+                renderCategories(categories, 'category-grid');
+                
+                // FORCE REVEAL IMMEDIATELY
+                const grid = document.getElementById('category-grid');
+                if (grid) {
+                    grid.classList.add('revealed');
+                    grid.style.opacity = '1';
+                    grid.style.visibility = 'visible';
+                }
+                
+                console.log('✅ Categories successfully rendered (with fallback safety)');
+                return true;
+            }
+            return false;
+        } catch (e) {
+            console.error('Error in initCategories:', e);
+            return false;
+        }
+    };
+
+    // First attempt
+    const rendered = await initCategories();
+
+    // If failed (slow DB), start a persistent observer
+    if (!rendered) {
+        let attempts = 0;
+        const interval = setInterval(async () => {
+            attempts++;
+            const success = await initCategories();
+            if (success || attempts > 20) { // Retry for 10 seconds
+                clearInterval(interval);
+                if (!success) console.error('❌ Failed to load categories after 20 attempts');
+            }
+        }, 500);
+    }
 
     // Load and render Promo Banners dynamically
     await loadAndRenderPromos();
-
-    // Render categories immediately so there is zero lag
-    renderCategories(categories, 'category-grid');
 
     // Fetch dynamic products and discounts asynchronously without blocking the UI
     (async () => {

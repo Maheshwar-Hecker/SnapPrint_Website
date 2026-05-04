@@ -7,9 +7,9 @@ const dataService = {
     productsDB: null,
     cachedAllProducts: null,
 
-    init: async function() {
+    init: async function () {
         if (this.productsDB) return this.productsDB;
-        
+
         try {
             const response = await fetch('data/products.json');
             this.productsDB = await response.json();
@@ -20,11 +20,11 @@ const dataService = {
         }
     },
 
-    getAllProductsFlattened: async function() {
+    getAllProductsFlattened: async function () {
         if (this.cachedAllProducts) return this.cachedAllProducts;
 
         await this.init();
-        
+
         let allProds = [];
         const fetchPromises = [];
 
@@ -45,7 +45,7 @@ const dataService = {
                                     p.subcategoryName = sub.name;
                                     p.subcategoryId = sub.id;
                                     p.parentSection = parentSection;
-                                    
+
                                     // Normalize image path
                                     if (!p.image && p.baseImagePath && p.images && p.images.length > 0) {
                                         p.image = p.baseImagePath + p.images[0];
@@ -101,10 +101,10 @@ const dataService = {
         return allProds;
     },
 
-    getProductsBySubcategory: async function(subId) {
+    getProductsBySubcategory: async function (subId) {
         await this.init();
         let subData = null;
-        
+
         this.productsDB.categories.forEach(cat => {
             const findSub = (subs) => subs.find(s => s.id === subId);
             if (cat.sections) {
@@ -130,10 +130,10 @@ const dataService = {
         return subData ? (subData.products || []) : [];
     },
 
-    getProductsByCategory: async function(categoryName) {
+    getProductsByCategory: async function (categoryName) {
         await this.init();
         const normalizedTarget = categoryName.replace(/[-\s]/g, '').toLowerCase();
-        
+
         const cat = this.productsDB.categories.find(c => {
             const normalizedName = c.name.replace(/[-\s]/g, '').toLowerCase();
             return normalizedName === normalizedTarget;
@@ -206,28 +206,28 @@ const dataService = {
     /**
      * Get products based on user interests
      */
-    getRecommendedProducts: async function(count = 8) {
+    getRecommendedProducts: async function (count = 8) {
         const all = await this.getAllProductsFlattened();
         const interests = window.analyticsService ? window.analyticsService.getData() : null;
-        
+
         if (!interests) return this.getRandomProducts(count);
-        
+
         const topCats = window.analyticsService.getTopCategories(3);
         const topBadges = window.analyticsService.getTopBadges(3);
-        
+
         // Filter products that match top categories OR top badges
-        let recommended = all.filter(p => 
-            topCats.includes(p.categoryName) || 
+        let recommended = all.filter(p =>
+            topCats.includes(p.categoryName) ||
             (p.badge && topBadges.includes(p.badge))
         );
-        
+
         if (recommended.length < count) {
             // Fill with random products if not enough recommendations
             const needed = count - recommended.length;
             const available = all.filter(p => !recommended.find(r => r.id === p.id));
             const randoms = [];
             const used = new Set();
-            while(randoms.length < needed && used.size < available.length) {
+            while (randoms.length < needed && used.size < available.length) {
                 const idx = Math.floor(Math.random() * available.length);
                 if (!used.has(idx)) {
                     used.add(idx);
@@ -236,7 +236,7 @@ const dataService = {
             }
             recommended = recommended.concat(randoms);
         }
-        
+
         // Shuffle recommended slightly
         return recommended.sort(() => 0.5 - Math.random()).slice(0, count);
     },
@@ -244,10 +244,10 @@ const dataService = {
     /**
      * Get products from user's view history
      */
-    getRecentlyViewedProducts: async function(count = 6) {
+    getRecentlyViewedProducts: async function (count = 6) {
         const historyIds = window.analyticsService ? window.analyticsService.getData().viewHistory : [];
         if (historyIds.length === 0) return [];
-        
+
         const all = await this.getAllProductsFlattened();
         return historyIds.map(id => all.find(p => p.id === id)).filter(p => p);
     },
@@ -255,13 +255,13 @@ const dataService = {
     /**
      * Get random products across categories
      */
-    getRandomProducts: async function(count = 6) {
+    getRandomProducts: async function (count = 6) {
         const all = await this.getAllProductsFlattened();
         const result = [];
         const max = all.length;
         if (max === 0) return result;
         const used = new Set();
-        while(result.length < count && used.size < max) {
+        while (result.length < count && used.size < max) {
             const idx = Math.floor(Math.random() * max);
             if (!used.has(idx)) {
                 used.add(idx);
@@ -271,7 +271,7 @@ const dataService = {
         return result;
     },
 
-    getProductById: async function(id) {
+    getProductById: async function (id) {
         let all = await this.getAllProductsFlattened();
         return all.find(p => p.id === id) || null;
     }
